@@ -1,5 +1,5 @@
 import { getWatchListUpdates } from '@/app/lib/projectUtils/watchLists/updates'
-import { TickerDetails } from '@/app/ui/projects/tickerDetails'
+import { TickerDetails } from '@/app/ui/projects/watchList/tickerDetails'
 
 
 export default async function TickerDetailedView() {
