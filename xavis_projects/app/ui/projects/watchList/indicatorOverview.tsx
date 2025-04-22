@@ -25,14 +25,14 @@ export function IndicatorOverview({ indicator }: IndicatorProps) {
     titleColor = "text-red-600"
   } else if (signal === "hold") {
     titleColor = "text-black"
-  } else if (signal === "inconclusive") {
+  } else if (signal === "inconclusive" || signal === null) {
     titleColor = "text-gray-500"
   }
 
   return (
       <div className="basis-full sm:basis-1/2 lg:basis-1/3 p-2">
         <Link
-          href={`projects/watchList/${indicator.id}`}
+          href={`projects/watchList/${indicator.id ?? 0}`}
           className="block h-full w-full p-6 bg-white hover:bg-gray-200"
         >
           {/* Pulsing light */}
@@ -48,15 +48,15 @@ export function IndicatorOverview({ indicator }: IndicatorProps) {
             {/* First column */}
             <div className="space-y-2">
               <h2 className={`text-lg font-semibold ${titleColor}`}>
-                {indicator.title}
+                {indicator.title ?? 'loading'}
               </h2>
               <div>
                 <span className="block text-sm font-medium text-gray-500">Ticker</span>
-                <span>{indicator.ticker}</span>
+                <span>{indicator.ticker ?? 'loading'}</span>
               </div>
               <div>
                 <span className="block text-sm font-medium text-gray-500">Value</span>
-                <span>{indicator.value}</span>
+                <span>{indicator.value ?? 'loading'}</span>
               </div>
             </div>
 
@@ -64,15 +64,15 @@ export function IndicatorOverview({ indicator }: IndicatorProps) {
             <div className="space-y-2">
               <div>
                 <span className="block text-sm font-medium text-gray-500">Type</span>
-                <span>{indicator.indicator}</span>
+                <span>{indicator.indicator ?? 'loading'}</span>
               </div>
               <div>
                 <span className="block text-sm font-medium text-gray-500">Signal</span>
-                <span className="capitalize">{indicator.signal}</span>
+                <span className="capitalize">{indicator.signal ?? 'loading'}</span>
               </div>
               <div>
                 <span className="block text-sm font-medium text-gray-500">Prev Signal</span>
-                <span className="capitalize">{indicator.previousIndicatorSignal}</span>
+                <span className="capitalize">{indicator.previousIndicatorSignal ?? 'loading'}</span>
               </div>
             </div>
           </div>

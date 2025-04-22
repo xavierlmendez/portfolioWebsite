@@ -10,7 +10,7 @@ const Navbar = () => {
           <div className="flex justify-between items-center h-full">
             {/* Logo or Title */}
             <Link href="/" className="text-xl  pr-40 font-bold text-gray-800 hover:text-gray-600 transition">
-              Xavis Projects
+              Xavi's Projects
             </Link>
 
             {/* Nav Links */}
@@ -34,6 +34,14 @@ const Navbar = () => {
 
                 {/* Dropdown */}
                 <ul className="absolute left-0 top-full mt-0 hidden w-56 rounded-md bg-white shadow-lg group-hover:block z-50 text-sm text-gray-700">
+                <li>
+                    <Link
+                      href="/projects/guineaPigProjects"
+                      className="block px-4 py-2 hover:bg-gray-100"
+                    >
+                      Guinea Pig Projects
+                    </Link>
+                  </li>
                   <li>
                     <Link
                       href="/projects/watchList"
