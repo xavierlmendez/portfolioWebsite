@@ -1,6 +1,5 @@
 import { getUpdates } from '@/app/lib/updates'
 import { Update } from '@/app/ui/update'
-import NavBar from '../ui/NavBar'
 
 
 export default async function Projects() {

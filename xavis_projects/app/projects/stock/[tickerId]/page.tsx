@@ -6,7 +6,7 @@ export default async function StockOverview() {
     const Indicators = await getAllIndicators()
    
     return (
-      <ul className="flex flex-wrap -m-2">
+      <ul className='flex flex-wrap -m-2'>
       {Indicators.map((indicator) => (
         <IndicatorOverview key={indicator.id} indicator={indicator} />
       ))}

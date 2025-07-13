@@ -34,16 +34,16 @@ export function KafkaMessagesViewer() {
 
 
   return (
-    <div className="border p-4 rounded-xl shadow-md mb-4 hover:shadow-lg transition-all bg-white">
-      <h2 className="text-xl font-semibold text-blue-600 mb-2">Live Kafka Messages</h2>
+    <div className='border p-4 rounded-xl shadow-md mb-4 hover:shadow-lg transition-all bg-white'>
+      <h2 className='text-xl font-semibold text-blue-600 mb-2'>Live Kafka Messages</h2>
       {isLoading ? (
-        <p className="text-gray-600">Loading messages...</p>
+        <p className='text-gray-600'>Loading messages...</p>
       ) : messages.length === 0 ? (
-        <p className="text-gray-600">No messages available.</p>
+        <p className='text-gray-600'>No messages available.</p>
       ) : (
-        <ul className="space-y-2 max-h-96 overflow-y-auto">
+        <ul className='space-y-2 max-h-96 overflow-y-auto'>
           {messages.map((msg, index) => (
-            <li key={index} className="border-b py-2 text-sm">
+            <li key={index} className='border-b py-2 text-sm'>
               <strong>Partition {msg.partition}:</strong> {msg.value} <span >({msg.offset})</span>
             </li>
           ))}

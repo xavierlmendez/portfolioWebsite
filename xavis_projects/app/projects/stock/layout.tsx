@@ -5,7 +5,7 @@ export default function stockLayout({
 }) {
     return <section>
         <div>stock inner options bar here</div>
-        <div className="p-8">
+        <div className='p-8'>
             {children}
         </div>
     </section>

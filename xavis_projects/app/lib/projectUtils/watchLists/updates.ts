@@ -21,12 +21,12 @@ export async function getWatchListUpdates() {
         return {
           id: symbol,
           title: symbol,
-          price: "Price: N/A",
-          change: "Change: N/A",
-          volume: "Volume: N/A",
-          bid: "Bid: N/A",
-          ask: "Ask: N/A",
-          dayRange: "Day Range: N/A"
+          price: 'Price: N/A',
+          change: 'Change: N/A',
+          volume: 'Volume: N/A',
+          bid: 'Bid: N/A',
+          ask: 'Ask: N/A',
+          dayRange: 'Day Range: N/A'
         }
       }
     })
@@ -38,6 +38,7 @@ export async function getWatchListUpdates() {
 // Dummy data function
 export async function getIndicator(_indicatorId: string) {
   // Ignoring the passed-in indicator ID and returning static dummy data
+  console.log(_indicatorId); // logging due to eslint error I want to keept
   const now = new Date()
   const oneDayAgo = new Date(Date.now() - 86400000)
 
@@ -62,8 +63,8 @@ export async function getAllIndicators() {
 
   return [
     {
-      ticker: 'AAPL',
       id: 'aapl-indicator-1',
+      ticker: 'AAPL',
       title: 'RSI Indicator',
       indicator: 'RSI',
       signal: 'Buy',
@@ -74,8 +75,8 @@ export async function getAllIndicators() {
       previousSignalTimestamp: oneDayAgo.toISOString(),
     },
     {
-      ticker: 'AAPL',
       id: 'aapl-indicator-2',
+      ticker: 'AAPL',
       title: 'MACD Indicator',
       indicator: 'MACD',
       signal: 'Sell',
@@ -86,8 +87,8 @@ export async function getAllIndicators() {
       previousSignalTimestamp: oneDayAgo.toISOString(),
     },
     {
-      ticker: 'MSFT',
       id: 'msft-indicator-1',
+      ticker: 'MSFT',
       title: 'SMA Indicator',
       indicator: 'SMA',
       signal: 'Hold',
@@ -98,8 +99,8 @@ export async function getAllIndicators() {
       previousSignalTimestamp: oneDayAgo.toISOString(),
     },
     {
-      ticker: 'MSFT',
       id: 'msft-indicator-2',
+      ticker: 'MSFT',
       title: 'EMA Indicator',
       indicator: 'EMA',
       signal: 'Buy',
@@ -110,8 +111,8 @@ export async function getAllIndicators() {
       previousSignalTimestamp: oneDayAgo.toISOString(),
     },
     {
-      ticker: 'GOOGL',
       id: 'googl-indicator-1',
+      ticker: 'GOOGL',
       title: 'RSI Indicator',
       indicator: 'RSI',
       signal: 'Sell',
@@ -122,8 +123,8 @@ export async function getAllIndicators() {
       previousSignalTimestamp: oneDayAgo.toISOString(),
     },
     {
-      ticker: 'GOOGL',
       id: 'googl-indicator-2',
+      ticker: 'GOOGL',
       title: 'MACD Indicator',
       indicator: 'MACD',
       signal: 'Buy',

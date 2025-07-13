@@ -13,17 +13,17 @@ interface ProjectOverviewProps {
 
 export const ProjectOverview: React.FC<ProjectOverviewProps> = ({ update }) => {
   return (
-    <li className="border p-4 rounded-xl shadow-md mb-4 hover:shadow-lg transition-all bg-white">
+    <li className='border p-4 rounded-xl shadow-md mb-4 hover:shadow-lg transition-all bg-white'>
       <Link href={update.link}>
-        <div className="cursor-pointer">
-          <h3 className="text-xl font-semibold text-blue-600 mb-2">{update.title}</h3>
-          <p className="text-gray-700 mb-2">{update.description}</p>
+        <div className='cursor-pointer'>
+          <h3 className='text-xl font-semibold text-blue-600 mb-2'>{update.title}</h3>
+          <p className='text-gray-700 mb-2'>{update.description}</p>
           {update.tags && (
-            <div className="flex gap-2 flex-wrap">
+            <div className='flex gap-2 flex-wrap'>
               {update.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded"
+                  className='bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded'
                 >
                   {tag}
                 </span>

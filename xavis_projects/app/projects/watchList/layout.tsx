@@ -5,7 +5,7 @@ export default function BotBrainLayout({
 }) {
     return <section>
         <div>watchList inner options bar here</div>
-        <div className="rounded-l bg-[#1E293B] shadow-xl p-8">
+        <div className='rounded-l bg-[#1E293B] shadow-xl p-8'>
             {children}
         </div>
     </section>

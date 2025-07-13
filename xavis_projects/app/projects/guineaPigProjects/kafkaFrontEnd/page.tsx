@@ -4,11 +4,11 @@ import { KafkaMessagesViewer } from '@/app/ui/projects/GuineaPigProjects/kafkaFr
 
 export default function KafkaTrafficVizPage() {
   return (
-    <main className="p-6 max-w-4xl mx-auto">
+    <main className='p-6 max-w-4xl mx-auto'>
       <ProjectHeader
-        title="Kafka Traffic Visualizer"
-        description="A UI to inspect Kafka topic traffic and live messages."
-        status="Experimental"
+        title='Kafka Traffic Visualizer'
+        description='A UI to inspect Kafka topic traffic and live messages.'
+        status='Experimental'
       />
 
       <KafkaMessagesViewer />
