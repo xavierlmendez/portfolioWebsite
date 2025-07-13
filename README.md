@@ -7,9 +7,9 @@ sudo yum update -y
 
 # Install needed tooling
 sudo yum install -y git
-curl -sL https://rpm.nodesource.com/setup_18.x | sudo bash
-sudo yum install -y nodejs
-npm install -g npm@latest
+sudo curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+\. "$HOME/.nvm/nvm.sh"
+nvm install 22
 
 # Pull in and navigate to project root
 git clone https://github.com/xavierlmendez/portfolioWebsite.git
