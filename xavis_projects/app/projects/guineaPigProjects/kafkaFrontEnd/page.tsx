@@ -1,4 +1,6 @@
 import { ProjectHeader } from '@/app/ui/projects/GuineaPigProjects/projectHeader'
+import { KafkaMessagesViewer } from '@/app/ui/projects/GuineaPigProjects/kafkaFrontEnd/KafkaMessagesViewer'
+
 
 export default function KafkaTrafficVizPage() {
   return (
@@ -9,7 +11,7 @@ export default function KafkaTrafficVizPage() {
         status="Experimental"
       />
 
-      {/* Project-specific UI and components will go here */}
+      <KafkaMessagesViewer />
     </main>
   )
 }
