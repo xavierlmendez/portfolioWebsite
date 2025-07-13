@@ -9,7 +9,7 @@ const Navbar = () => {
 
           <div className="flex justify-between items-center h-full">
             {/* Logo or Title */}
-            <Link href="/" className="text-xl  pr-40 font-bold text-gray-800 hover:text-gray-600 transition">
+            <Link href="/about" className="text-xl  pr-40 font-bold text-gray-800 hover:text-gray-600 transition">
               Xavi's Projects
             </Link>
 
