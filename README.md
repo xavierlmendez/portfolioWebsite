@@ -6,7 +6,8 @@ bash #!/bin/bash
 sudo yum update -y
 
 # Install needed tooling
-sudo yum install -y git curl -sL https://rpm.nodesource.com/setup_18.x | sudo bash
+sudo yum install -y git
+curl -sL https://rpm.nodesource.com/setup_18.x | sudo bash
 sudo yum install -y nodejs
 npm install -g npm@latest
 
