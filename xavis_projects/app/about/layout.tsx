@@ -4,7 +4,7 @@ export default function BotBrainLayout({
     children: React.ReactNode
 }) {
     return <section>
-        <div className="rounded-l bg-[#1E293B] shadow-xl p-8">
+        <div>
             {children}
         </div>
     </section>

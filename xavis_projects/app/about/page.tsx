@@ -1,51 +1,86 @@
-export default async function about() {
+'use client'
 
-  const summary = 'Welcome to Xavis Projects, this is a central playground for new patterns, tools, and industry exposure. ' +
-    'I am a backend focused software developer gaining experience in cloud solutions and exposure to frontend development through this site. ' +
-    'Feel free to connect, ask questions, or shoot over question to me on linkedin and I will try my best to get back to you. :)';
+export default function AboutPage() {
+  const summary =
+    "Welcome to Xavi's Projects! a window into my experiments with new software patterns, tools, and technologies. " +
+    "I'm Xavier, a backend-focused developer diving into cloud platforms and picking up frontend skills along the way. " +
+    'I created this site as both a living portfolio and a sandbox for learning, tinkering, and sharing insights with the developer community.';
 
-  // Ideally have a visual here but will have to brainstorm more
-  const sitePlan = 'For now, this website is minmalistic, but will expand out soon. ' +
-    'The first use cases will be a learning environment for new tools, design patterns, thrid party APIs, and more. ' +
-    'The second use cases will be a frontend for personal projects such as a BE text messaging API wrapper UI, and a financial analytics and bot making application. ' +
-    'Later this site will be more polished and updated to be used as a proof of work and tool repository for me and others to pull from';
+  const sitePlan =
+    'This site is intentionally minimal to start, prioritizing clean structure over visual fluff. ' +
+    'My immediate goals:\n' +
+    '• Build a personal playground to try out new tools, design patterns, and APIs.\n' +
+    '• Provide a frontend UI for backend-focused projects, including a text message service interface and financial analytics apps.\n' +
+    '• Gradually evolve this platform into a polished proof-of-work, and an open resource for fellow engineers.';
 
-  // Make into component later with ta dones and todos listed
   const currentProjects = [
-    'Kafka Visualizer',
-    'Text Message Service Interface',
-    'Culinary Connection',
-    'Bot Maker',
-  ];
+    {
+      name: 'Kafka Visualizer',
+      description: 'Visualizes real-time Kafka traffic for learning and debugging event-driven architectures.',
+      status: 'In Progress',
+    },
+    {
+      name: 'Text Message Service Interface',
+      description: 'Frontend for a backend messaging API wrapper to experiment with async communication.',
+      status: 'Prototype',
+    },
+    {
+      name: 'Culinary Connection',
+      description: 'Connects culinary students with local customers—explores scalable backend and data modeling.',
+      status: 'Alpha',
+    },
+    {
+      name: 'Bot Maker',
+      description: 'A sandbox for building trading bots and analyzing financial signals.',
+      status: 'Exploring',
+    },
+  ]
 
   return (
-    <ul>
-      <section className='space-y-4' id='aboutPageSummary'>
-        <h2 className='text-2xl font-semibold border-b border-gray-700 pb-2 pt-8'>Summary</h2>
-        <p className='leading-relaxed whitespace-pre-line'>{summary}</p>
+    <main className='w-full min-h-screen flex flex-col items-center px-4 py-8'>
+      <section id='header' className='w-full max-w-3xl mb-8 text-center'>
+        <h1 className='text-4xl font-bold text-white mb-2'>About Xavi&apos;s Projects</h1>
+        <p className='text-lg text-gray-300'>{summary}</p>
       </section>
 
-      <section className='space-y-4' id='sitePlan'>
-        <h2 className='text-2xl font-semibold border-b border-gray-700 pb-2 pt-8'>Plan for Portfolio Site</h2>
-        <p className='leading-relaxed whitespace-pre-line'>{sitePlan}</p>
+      <section id='sitePlan' className='w-full max-w-3xl bg-gray-900 rounded-2xl shadow-md p-6 mb-8'>
+        <h2 className='text-2xl font-semibold mb-4 text-white'>Site Mission & Evolution</h2>
+        <pre className='text-gray-300 whitespace-pre-line font-sans'>{sitePlan}</pre>
       </section>
 
-      <section className='flex justify-center' id='sitePlanVisual'>
-        <div className='w-full max-w-md h-48 bg-gray-800 rounded-lg flex items-center justify-center'>
-          <span className='text-gray-400 italic'>Visual coming soon…</span>
+      <section id='currentProjects' className='w-full max-w-3xl mb-8'>
+        <h2 className='text-2xl font-semibold mb-4 text-white'>Active Experiments</h2>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+          {currentProjects.map((proj) => (
+            <div key={proj.name} className='bg-gray-800 rounded-xl p-4 flex flex-col shadow hover:scale-[1.025] transition-transform'>
+              <h3 className='text-lg font-semibold text-emerald-300'>{proj.name}</h3>
+              <p className='text-gray-300 text-sm mb-1'>{proj.description}</p>
+              <span className='text-xs bg-gray-700 text-emerald-400 rounded-full px-2 py-1 self-start'>{proj.status}</span>
+            </div>
+          ))}
         </div>
       </section>
 
-      <section className='space-y-4' id='currentProjectsOverview'>
-        <h2 className='text-2xl font-semibold border-b border-gray-700 pb-2 pt-8'>Current Projects</h2>
-        <ul className='list-disc list-inside space-y-1'>
-          {currentProjects.map((proj) => (
-            <li key={proj} className='bg-gray-800 px-4 py-2 rounded-lg'>
-              {proj}
-            </li>
-          ))}
+      <section id='archImagePlaceholder' className='w-full max-w-3xl mb-8 flex justify-center'>
+        <div className='w-full h-40 max-w-lg bg-gray-900 rounded-2xl flex items-center justify-center border-2 border-dashed border-emerald-500'>
+          <span className='text-gray-500 italic'>[Project architecture visual coming soon]</span>
+        </div>
+      </section>
+
+      <section id='philosophy' className='w-full max-w-3xl bg-gray-900 rounded-2xl shadow-md p-6 mb-8'>
+        <h2 className='text-2xl font-semibold mb-4 text-white'>How I Approach Learning & Building</h2>
+        <ul className='list-disc list-inside text-gray-300 space-y-1 ml-4'>
+          <li>
+            <span className='text-emerald-400 font-semibold'>Learning in public:</span> I document successes and stumbles so others can learn with me.
+          </li>
+          <li>
+            <span className='text-emerald-400 font-semibold'>Intentional system design:</span> Each project balances simplicity, flexibility, and future scalability—architectural write-ups are shared as I iterate.
+          </li>
+          <li>
+            <span className='text-emerald-400 font-semibold'>Community focus:</span> I welcome questions, code reviews, and collaboration—connect via <a href='https://linkedin.com/in/xaviermendez' className='underline text-emerald-400'>LinkedIn</a>!
+          </li>
         </ul>
       </section>
-    </ul>
+    </main>
   )
 }

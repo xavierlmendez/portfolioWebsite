@@ -8,7 +8,7 @@ const Navbar = () => {
         <div className='container mx-auto px-6 h-20 flex justify-between items-center'>
 
           <div id='logo' className='flex justify-between items-center h-full'>
-            <Link href='/about' className='text-xl  pr-40 font-bold text-gray-800 hover:text-gray-600 transition'>
+            <Link href='/' className='text-xl  pr-40 font-bold text-gray-800 hover:text-gray-600 transition'>
               Xavi&apos;s Projects
             </Link>
 
