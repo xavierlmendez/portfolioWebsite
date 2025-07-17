@@ -13,6 +13,16 @@ const Navbar = () => {
             </Link>
 
             <ul id='navLinks' className='hidden md:flex items-center gap-x-8 text-gray-700 font-medium'>
+
+              <li>
+                <Link
+                  href='/'
+                  className='block px-4 py-2 hover:text-blue-600 transition'
+                >
+                  Home
+                </Link>
+              </li>
+
               <li>
                 <Link
                   href='/about'
@@ -24,7 +34,11 @@ const Navbar = () => {
 
               <li className='group relative cursor-pointer'>
                 <div className='block px-4 py-2 hover:text-blue-600 transition'>
-                  Projects
+                  <Link
+                    href='/projects'
+                    className='block px-4 py-2 hover:text-blue-600'>
+                    Projects
+                  </Link>
                 </div>
 
                 <ul id='projectsDropdown' className='absolute left-0 top-full mt-0 hidden w-56 rounded-md bg-white shadow-lg group-hover:block z-50 text-sm text-gray-700'>
