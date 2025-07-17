@@ -16,7 +16,7 @@ export default async function Projects() {
       title: 'Watchlist Tracker',
       description:
         'A streamlined tool for monitoring selected stock tickers, visualizing real-time market data, and tracking personalized watchlists. Includes dynamic price updates, indicator tracking, and trend visualization.',
-      link: '/projects/stock/watchlist-tracker',
+      link: '/projects/watchList',
       tags: ['Finance', 'Stocks', 'Real-time', 'Dashboard', 'Data Viz'],
     },
     {
