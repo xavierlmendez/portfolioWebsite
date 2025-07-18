@@ -19,12 +19,17 @@ export default async function GuineaPigProjects() {
     }
   ];
 
-    return (
-      <ul>
-        <div>Guinea Pig Projects</div>
-        {projectInformation.map((project) => (
-          <ProjectOverview key={project.title} update={project} />
-        ))}
-      </ul>
-    )
-  }
+  const summary = 'Projects used as templates and testing of new technology implementations'
+
+  return (
+    <main className='w-full min-h-screen flex flex-col items-center px-4 py-8'>
+      <section id='header' className='w-full max-w-3xl mb-8 text-center'>
+        <h1 className='text-4xl font-bold text-white mb-2'>Guinea Pig Projects</h1>
+        <p className='text-lg text-gray-300'>{summary}</p>
+      </section>
+      {projectInformation.map((project) => (
+        <ProjectOverview key={project.title} update={project} />
+      ))}
+    </main>
+  )
+}

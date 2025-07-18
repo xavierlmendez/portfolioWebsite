@@ -42,11 +42,13 @@ export default async function Projects() {
     }
   ];
   return (
-    <ul>
-      <div>project&apos;s Home</div>
+    <main className='w-full min-h-screen flex flex-col items-center px-4 py-8'>
+      <section id='header' className='w-full max-w-3xl mb-8 text-center'>
+        <h1 className='text-4xl font-bold text-white mb-2'>About Xavi&apos;s Projects</h1>
+      </section>
       {projectInformation.map((project) => (
         <ProjectOverview key={project.title} update={project} />
       ))}
-    </ul>
+    </main>
   )
 }
