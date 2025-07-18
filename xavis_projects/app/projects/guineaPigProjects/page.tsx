@@ -1,7 +1,12 @@
-import { ProjectOverview } from '@/app/ui/projects/GuineaPigProjects/projectOverview';
+import { Header } from '@/app/ui/page/header';
+import { ProjectOverview } from '@/app/ui/projects/projectOverview';
 
 
 export default async function GuineaPigProjects() {
+
+  const pageTitle = 'Guinea Pig Projects';
+  const pageDescription = 'A collection of modular, skeleton projects designed to quickly prototype and showcase backend-first implementations with new technologies. Serves as a sandbox for learning, experimentation, and template generation across different stacks.';
+
   const projectInformation = [
     {
       title: 'Kafka Traffic Visualizer',
@@ -19,12 +24,12 @@ export default async function GuineaPigProjects() {
     }
   ];
 
-    return (
-      <ul>
-        <div>Guinea Pig Projects</div>
-        {projectInformation.map((project) => (
-          <ProjectOverview key={project.title} update={project} />
-        ))}
-      </ul>
-    )
-  }
+  return (
+    <>
+      <Header title={pageTitle} description={pageDescription} />
+      {projectInformation.map((project) => (
+        <ProjectOverview key={project.title} update={project} />
+      ))}
+    </>
+  )
+}

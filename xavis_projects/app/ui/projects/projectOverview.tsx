@@ -13,7 +13,7 @@ interface ProjectOverviewProps {
 
 export const ProjectOverview: React.FC<ProjectOverviewProps> = ({ update }) => {
   return (
-    <li className='border p-4 rounded-xl shadow-md mb-4 hover:shadow-lg transition-all bg-white'>
+    <li className='border p-4 rounded-xl shadow-md mb-4 hover:shadow-lg transition-all bg-white w-full'>
       <Link href={update.link}>
         <div className='cursor-pointer'>
           <h3 className='text-xl font-semibold text-blue-600 mb-2'>{update.title}</h3>

@@ -1,9 +1,14 @@
-import { ProjectOverview } from '@/app/ui/projects/GuineaPigProjects/projectOverview';
+import { ProjectOverview } from '@/app/ui/projects/projectOverview';
 import { getUpdates } from '@/app/lib/updates'
 import { Update } from '@/app/ui/update'
+import { Header } from '../ui/page/header';
 
 
 export default async function Projects() {
+
+  const pageTitle = "Project's Home";
+  const pageDescription = 'Home page covering all projects complete, abandoned, in maintenance, underdevelopment, and yet to start!'
+
   const projectInformation = [
     {
       title: 'Guinea Pig Projects',
@@ -43,7 +48,7 @@ export default async function Projects() {
   ];
   return (
     <ul>
-      <div>project&apos;s Home</div>
+      <Header title={pageTitle} description={pageDescription} />
       {projectInformation.map((project) => (
         <ProjectOverview key={project.title} update={project} />
       ))}

@@ -1,6 +1,11 @@
 'use client'
 
+import { Header } from "../ui/page/header";
+
 export default function AboutPage() {
+
+  const pageTitle = "About Xavi's Projects";
+  
   const summary =
     "Welcome to Xavi's Projects! a window into my experiments with new software patterns, tools, and technologies. " +
     "I'm Xavier, a backend-focused developer diving into cloud platforms and picking up frontend skills along the way. " +
@@ -38,18 +43,16 @@ export default function AboutPage() {
 
   return (
     <main className='w-full min-h-screen flex flex-col items-center px-4 py-8'>
-      <section id='header' className='w-full max-w-3xl mb-8 text-center'>
-        <h1 className='text-4xl font-bold text-white mb-2'>About Xavi&apos;s Projects</h1>
-        <p className='text-lg text-gray-300'>{summary}</p>
-      </section>
 
-      <section id='sitePlan' className='w-full max-w-3xl bg-gray-900 rounded-2xl shadow-md p-6 mb-8'>
+      <Header title={pageTitle} description={summary} />
+
+      <section id='sitePlan' className='w-full max-w-4xl bg-gray-900 rounded-2xl shadow-md p-6 mb-8'>
         <h2 className='text-2xl font-semibold mb-4 text-white'>Site Mission & Evolution</h2>
         <pre className='text-gray-300 whitespace-pre-line font-sans'>{sitePlan}</pre>
       </section>
 
-      <section id='currentProjects' className='w-full max-w-3xl mb-8'>
-        <h2 className='text-2xl font-semibold mb-4 text-white'>Active Experiments</h2>
+      <section id='currentProjects' className='w-full max-w-4xl mb-8'>
+        <h2 className='text-2xl font-semibold text-white mr-2 p-4'>Active Experiments</h2>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
           {currentProjects.map((proj) => (
             <div key={proj.name} className='bg-gray-800 rounded-xl p-4 flex flex-col shadow hover:scale-[1.025] transition-transform'>
@@ -61,13 +64,13 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id='archImagePlaceholder' className='w-full max-w-3xl mb-8 flex justify-center'>
+      <section id='archImagePlaceholder' className='w-full max-w-4xl mb-8 flex justify-center'>
         <div className='w-full h-40 max-w-lg bg-gray-900 rounded-2xl flex items-center justify-center border-2 border-dashed border-emerald-500'>
           <span className='text-gray-500 italic'>[Project architecture visual coming soon]</span>
         </div>
       </section>
 
-      <section id='philosophy' className='w-full max-w-3xl bg-gray-900 rounded-2xl shadow-md p-6 mb-8'>
+      <section id='philosophy' className='w-full max-w-4xl bg-gray-900 rounded-2xl shadow-md p-6 mb-8'>
         <h2 className='text-2xl font-semibold mb-4 text-white'>How I Approach Learning & Building</h2>
         <ul className='list-disc list-inside text-gray-300 space-y-1 ml-4'>
           <li>

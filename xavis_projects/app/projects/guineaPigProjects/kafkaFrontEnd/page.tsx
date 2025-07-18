@@ -1,4 +1,4 @@
-import { ProjectHeader } from '@/app/ui/projects/GuineaPigProjects/projectHeader'
+import { ProjectHeader } from '@/app/ui/projects/projectHeader'
 import { KafkaMessagesViewer } from '@/app/ui/projects/GuineaPigProjects/kafkaFrontEnd/KafkaMessagesViewer'
 
 
