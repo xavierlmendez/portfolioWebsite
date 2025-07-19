@@ -5,7 +5,7 @@ import { TickerDetails } from '@/app/ui/projects/watchList/tickerDetails'
 export default async function WatchList() {
   const tickersWatched = await getWatchListUpdates()
 
-  const summary = 'project to track watched stockes and indicators'
+  const summary = 'project to track watched stocks and indicators'
 
   return (
     <main className='w-full min-h-screen flex flex-col items-center px-4 py-8'>

@@ -68,7 +68,7 @@ const Navbar = () => {
                   </li>
                   <li>
                     <Link
-                      href='/projects/strategy-backtest'
+                      href='/projects/strategyBacktester'
                       className='block px-4 py-2 hover:bg-gray-100'
                     >
                       Strategy Backtester
@@ -76,7 +76,7 @@ const Navbar = () => {
                   </li>
                   <li>
                     <Link
-                      href='/projects/sentiment'
+                      href='/projects/sentimentAnalyzer'
                       className='block px-4 py-2 hover:bg-gray-100'
                     >
                       Sentiment Analyzer
@@ -87,7 +87,7 @@ const Navbar = () => {
 
               <li>
                 <Link
-                  href='/connectedSites'
+                  href='/links'
                   className='block px-4 py-2 hover:text-blue-600 transition'
                 >
                   Links

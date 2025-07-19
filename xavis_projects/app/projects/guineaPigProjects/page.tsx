@@ -19,7 +19,7 @@ export default async function GuineaPigProjects() {
       title: 'Text Message Interface Wrapper',
       description:
         'A frontend dashboard for sending and receiving SMS via a backend messaging API. Features message logs, delivery status tracking, and quick-reply templates.',
-      link: '/projects/guineaPigProjects/sms-interface-wrapper',
+      link: '/projects/guineaPigProjects/smsInterfaceWrapper',
       tags: ['Messaging', 'SMS', 'API Wrapper', 'Frontend for Backend'],
     }
   ];
