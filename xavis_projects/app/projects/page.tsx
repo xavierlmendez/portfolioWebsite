@@ -47,11 +47,11 @@ export default async function Projects() {
     }
   ];
   return (
-    <ul>
+    <>
       <Header title={pageTitle} description={pageDescription} />
       {projectInformation.map((project) => (
         <ProjectOverview key={project.title} update={project} />
       ))}
-    </ul>
+    </>
   )
 }
