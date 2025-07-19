@@ -1,6 +1,4 @@
 import { ProjectOverview } from '@/app/ui/projects/projectOverview';
-import { getUpdates } from '@/app/lib/updates'
-import { Update } from '@/app/ui/update'
 import { Header } from '../ui/page/header';
 
 
