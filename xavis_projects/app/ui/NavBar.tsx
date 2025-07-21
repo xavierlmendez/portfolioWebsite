@@ -90,7 +90,7 @@ const Navbar = () => {
                   href='/resourcesAndBlog'
                   className='block px-4 py-2 hover:text-blue-600 transition'
                 >
-                  Resources 'n Blog
+                  Resources &apos;n Blog
                 </Link>
               </li>
             </ul>
