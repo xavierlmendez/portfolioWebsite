@@ -42,7 +42,7 @@ const featureIdeas = [
 export default function LandingPage() {
   return (
     <main className='w-full min-h-screen  flex flex-col items-center px-4 py-8'>
-      <section id='summary' className='w-full max-w-3xl mb-8 text-center'>
+      <section id='summary' className='w-full mb-8 text-center'>
         <h1 className='text-4xl font-bold mb-2 text-white'>Welcome to Xavi&apos;s Projects</h1>
         <p className='text-lg text-gray-300'>
           Playground and showcase for modern backend architectures, system design patterns, and full-stack experimentation.<br />
@@ -50,7 +50,7 @@ export default function LandingPage() {
         </p>
       </section>
 
-      <section id='systemDesign' className='w-full max-w-3xl bg-gray-900 rounded-2xl shadow-md p-6 mb-8'>
+      <section id='systemDesign' className='w-full max-w-4xl bg-gray-900 rounded-2xl shadow-md p-6 mb-8'>
         <h2 className='text-2xl font-semibold mb-4 text-white'>How I Design Systems</h2>
         <p className='text-gray-300 mb-2'>
           Every project is built to be a learning experience, starting simple, but structured for future scalability. Expect layered architectures, robust API boundaries, and intentional trade-offs between impact, speed and maintainability.
@@ -62,7 +62,7 @@ export default function LandingPage() {
         </ul>
       </section>
 
-      <section id='navigationGuide' className='w-full max-w-3xl bg-gray-900 rounded-2xl shadow-md p-6 mb-8'>
+      <section id='navigationGuide' className='w-full max-w-4xl bg-gray-900 rounded-2xl shadow-md p-6 mb-8'>
         <h2 className='text-2xl font-semibold mb-4 text-white'>How to Navigate This Site</h2>
         <ul className='list-inside text-gray-300 space-y-2'>
           <li><span className='font-semibold text-emerald-400'>Projects:</span> Explore hands-on builds. Each project page details its purpose, architecture, and code links.</li>
@@ -71,7 +71,7 @@ export default function LandingPage() {
         </ul>
       </section>
 
-      <section id='projectsOverview' className='w-full max-w-3xl mb-8'>
+      <section id='projectsOverview' className='w-full max-w-4xl mb-8'>
         <h2 className='text-2xl font-semibold mb-4 text-white'>Current Projects</h2>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
           {currentProjects.map((proj) => (
@@ -84,13 +84,13 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section id='sysArchDiagramPlaceholder' className='w-full max-w-3xl mb-8 flex justify-center'>
+      <section id='sysArchDiagramPlaceholder' className='w-full max-w-4xl mb-8 flex justify-center'>
         <div className='w-full h-40 max-w-lg bg-gray-900 rounded-2xl flex items-center justify-center border-2 border-dashed border-emerald-500'>
           <span className='text-gray-500 italic'>[System architecture visual coming soon]</span>
         </div>
       </section>
 
-      <section id='extraFeatureIdeas' className='w-full max-w-3xl bg-gray-900 rounded-2xl shadow-md p-6 mb-8'>
+      <section id='extraFeatureIdeas' className='w-full max-w-4xl bg-gray-900 rounded-2xl shadow-md p-6 mb-8'>
         <h2 className='text-2xl font-semibold mb-4 text-white'>Ideas to Expand This Portfolio</h2>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
           {featureIdeas.map((idea) => (
