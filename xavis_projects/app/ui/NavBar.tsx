@@ -55,7 +55,7 @@ const Navbar = () => {
                       href='/projects/watchList'
                       className='block px-4 py-2 hover:bg-gray-100'
                     >
-                      Watchlist Tracker
+                      Watch List Tracker
                     </Link>
                   </li>
                   <li>
@@ -87,10 +87,10 @@ const Navbar = () => {
 
               <li>
                 <Link
-                  href='/links'
+                  href='/resourcesAndBlog'
                   className='block px-4 py-2 hover:text-blue-600 transition'
                 >
-                  Links
+                  Resources 'n Blog
                 </Link>
               </li>
             </ul>

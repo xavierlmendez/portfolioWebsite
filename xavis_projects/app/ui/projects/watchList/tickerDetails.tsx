@@ -19,7 +19,7 @@ type TickerProps = {
   
     return (
     <li className='mb-4 w-full overflow-hidden rounded-xl shadow-lg transition hover:shadow-xl'>
-      <Link href={`${update.id}`} className='block bg-white p-6 rounded-xl hover:bg-gray-50'>
+      <Link href={`watchList/details/${update.id}`} className='block bg-white p-6 rounded-xl hover:bg-gray-50'>
         <div className='grid grid-cols-7 items-center gap-6 text-gray-800'>
           <h2 className={`text-xl font-bold ${titleColor}`}>
             {update.title}

@@ -35,7 +35,6 @@ export function IndicatorOverview({ indicator }: IndicatorProps) {
           href={`projects/watchList/${indicator.id ?? 0}`}
           className='block h-full w-full p-6 bg-white hover:bg-gray-200'
         >
-          {/* Pulsing light */}
           <div className='absolute right-4 top-4'>
             <span className='relative flex h-4 w-4'>
               <span className={`animate-ping absolute inline-flex h-full w-full rounded-full ${titleColor} opacity-75`}></span>
@@ -43,9 +42,7 @@ export function IndicatorOverview({ indicator }: IndicatorProps) {
             </span>
           </div>
 
-          {/* Content grid */}
           <div className='grid grid-cols-2 gap-4 h-full items-start pt-4 text-[#1E293B]'>
-            {/* First column */}
             <div className='space-y-2'>
               <h2 className={`text-lg font-semibold ${titleColor}`}>
                 {indicator.title ?? 'loading'}
@@ -60,7 +57,6 @@ export function IndicatorOverview({ indicator }: IndicatorProps) {
               </div>
             </div>
 
-            {/* Second column */}
             <div className='space-y-2'>
               <div>
                 <span className='block text-sm font-medium text-gray-500'>Type</span>
