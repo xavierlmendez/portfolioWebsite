@@ -7,7 +7,7 @@ type UpdateProps = {
     }
   }
   
-  export function Update({ update }: UpdateProps) {
+  export function BlogEntry({ update }: UpdateProps) {
     return (
       <li key={update.id} className='mb-4'>
         <h2 className='text-xl font-bold'>{update.title}</h2>
