@@ -28,7 +28,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <div className='bg-[#0F172A] min-h-screen flex flex-col text-white'>
           <NavBar />
-          <main className='rounded-2xl shadow-2xl mx-auto max-w-7xl px-6 bg-gray-950 text-white w-full flex-grow mb-10 mt-10'>
+          <main className='rounded-2xl shadow-2xl mx-auto max-w-7xl px-6 bg-black text-white w-full flex-grow mb-10 mt-10'>
             {children}
           </main>
         </div>
