@@ -32,11 +32,11 @@ export default function SupportPage() {
     },
     {
       name: 'PayPal',
-      url: 'https://www.paypal.me/xaviermendez',
+      url: 'https://www.paypal.me/xavierlmendez',
     },
     {
       name: 'GitHub Sponsors',
-      url: 'https://github.com/sponsors/xaviermendez',
+      url: 'https://github.com/sponsors/xavierlmendez',
     },
   ]
 
