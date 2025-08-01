@@ -8,9 +8,9 @@ const Navbar = () => {
         <div className='container mx-auto px-6 h-16.5 flex justify-between items-center'>
 
           <div id='logo' className='flex justify-between items-center h-full'>
-            <Link href='/' className='text-xl  pr-40 font-bold text-black hover:text-blue-600 transition'>
-              Xavi&apos;s Projects
-            </Link>
+            <a target="_blank" rel="noopener noreferrer" href='https://xavi-codeco.com' className='text-xl  pr-40 font-bold text-black hover:text-blue-600 transition'>
+              Xavi Code & Co
+            </a>
 
             <ul id='navLinks' className='hidden text-l md:flex items-center gap-x-8 text-black font-medium'>
 
@@ -19,7 +19,7 @@ const Navbar = () => {
                   href='/'
                   className='block px-4 py-2 hover:text-blue-600 transition'
                 >
-                  Home
+                  Xav&apos;s Projects Home
                 </Link>
               </li>
 
