@@ -2,7 +2,6 @@
 
 import { TextForm } from '@/app/ui/projects/GuineaPigProjects/smsInterfaceWrapper/TextForm';
 import { Header } from '../../../ui/page/header';
-import { UnderDevelopment } from '../../../ui/page/underDevelopment';
 
 export default function SmsInterfaceWrapperPage() {
 
