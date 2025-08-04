@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: xavis-projects-deployment
+  labels:
+    app: xavis-projects
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: xavis-projects
+  template:
+    metadata:
+      labels:
+        app: xavis-projects
+    spec:
+      containers:
+      - name: xavis-projects-container
+        image: 705558108816.dkr.ecr.us-east-1.amazonaws.com/simple-docker-service-0afffee27add:latest
+        ports:
+        - containerPort: 3000
+        resources:
+          requests:
+            cpu: "250m"
+            memory: "512Mi"
+          limits:
+            cpu: "500m"
+            memory: "1Gi"
+        imagePullPolicy: Always
+      imagePullSecrets:
+      - name: ecr-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: xavis-projects-service
+spec:
+  selector:
+    app: xavis-projects
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 3000
+  type: LoadBalancer
