@@ -5,22 +5,21 @@ const Navbar = () => {
   return (
     <>
       <div className='w-full sticky top-0 z-50 bg-gradient-to-r bg-[#f07a05] shadow-lg backdrop-blur-md border-b border-white/20'>
-        <div className='container mx-auto px-6 h-16.5 flex justify-between items-center'>
+        <div className='container mx-auto px-6 py-1.5 h-16.5 flex justify-between items-center'>
 
           <div id='logo' className='flex justify-between items-center h-full'>
-            <a target="_blank" rel="noopener noreferrer" href='https://xavi-codeco.com' className='text-xl  pr-40 font-bold text-black hover:text-blue-600 transition'>
-              Xavi Code & Co
-            </a>
+            <Link  href='/' className='text-xl  pr-40 font-bold text-black hover:text-blue-600 transition'>
+              Xavi&apos;s Projects
+            </Link>
 
             <ul id='navLinks' className='hidden text-l md:flex items-center gap-x-8 text-black font-medium'>
 
               <li>
-                <Link
-                  href='/'
+                <a target="_blank" rel="noopener noreferrer" href='https://xavi-codeco.com'
                   className='block px-4 py-2 hover:text-blue-600 transition'
                 >
-                  Xavi&apos;s Projects Home
-                </Link>
+                  Xavi Code & Co
+                </a>
               </li>
 
               <li>
