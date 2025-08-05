@@ -18,7 +18,7 @@ export const TextForm: React.FC = () => {
             const res = await fetch('/api/send-sms', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ phone, message }),
+                body: JSON.stringify({token, sid, phone, message }),
             })
 
             if (!res.ok) throw new Error('Network response was not ok')
