@@ -42,7 +42,7 @@ export const TextForm: React.FC = () => {
                     <input
                         id="token"
                         name="token"
-                        value={phone}
+                        value={token}
                         onChange={(e) => setToken(e.target.value)}
                         placeholder="[auth token]"
                         className="w-full px-4 py-2 bg-[#0f172a] text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00FFF7]"
@@ -57,7 +57,7 @@ export const TextForm: React.FC = () => {
                     <input
                         id="sid"
                         name="sid"
-                        value={phone}
+                        value={sid}
                         onChange={(e) => setSid(e.target.value)}
                         placeholder="[sid]"
                         className="w-full px-4 py-2 bg-[#0f172a] text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00FFF7]"
