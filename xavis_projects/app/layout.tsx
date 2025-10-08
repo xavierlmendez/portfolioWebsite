@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
@@ -30,6 +31,7 @@ export default function RootLayout({
           <NavBar />
           <main className='rounded-2xl shadow-2xl mx-auto max-w-7xl px-6 bg-black text-white w-full flex-grow mb-10 mt-10'>
             {children}
+            <Analytics />
           </main>
         </div>
         <footer className='text-gray-500 text-center text-sm pt-8 mb-5'>
