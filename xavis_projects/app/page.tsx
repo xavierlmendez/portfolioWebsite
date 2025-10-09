@@ -1,7 +1,5 @@
 'use client'
 
-import Link from "next/link"
-
 const currentProjects = [
   {
     name: 'Kafka Visualizer',
@@ -93,8 +91,8 @@ export default function LandingPage() {
         <h2 className='text-2xl font-semibold mb-4 text-white'>Current Projects</h2>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
           {currentProjects.map((proj) => (
-            <a href={proj.link}>
-              <div key={proj.name} className='bg-gray-800 rounded-xl p-4 flex flex-col shadow hover:scale-[1.025] transition-transform'>
+            <a key={proj.name} href={proj.link}>
+              <div className='bg-gray-800 rounded-xl p-4 flex flex-col shadow hover:scale-[1.025] transition-transform'>
                 <h3 className='text-lg font-semibold text-emerald-300'>{proj.name}</h3>
                 <p className='text-gray-300 text-sm mb-1'>{proj.description}</p>
                 <span className='text-xs bg-gray-700 text-emerald-400 rounded-full px-2 py-1 self-start'>{proj.status}</span>
