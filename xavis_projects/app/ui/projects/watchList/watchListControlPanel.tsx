@@ -1,0 +1,76 @@
+'use client'
+
+import { useState, memo, FormEvent } from 'react'
+
+type Ticker = {
+  id: string
+  title: string
+  price: string
+  change: string
+  volume: string
+  bid: string
+  ask: string
+  dayRange: string
+}
+
+type Props = {
+  tickers: Ticker[] 
+  onAddTicker: (symbol: string) => void 
+  onRemoveTicker: (id: string) => void
+  pending?: boolean
+}
+
+export const WatchListControlPanel = memo(function WatchListControlPanel({
+  tickers,
+  onAddTicker,
+  onRemoveTicker,
+  pending = false,
+}: Props) {
+  const [symbol, setSymbol] = useState('')
+
+  const submit = (e: FormEvent) => {
+    e.preventDefault()
+    const cleaned = symbol.trim().toUpperCase()
+    if (!cleaned) return
+    onAddTicker(cleaned)
+    setSymbol('')
+  }
+
+  return (
+    <div className="rounded-xl w-full border border-white/10 p-4">
+      <form onSubmit={submit} className="flex gap-2">
+        <input
+          value={symbol}
+          onChange={(e) => setSymbol(e.target.value)}
+          placeholder="Add ticker (e.g., NVDA)"
+          className="flex-1 rounded-lg bg-black/30 px-3 py-2 outline-none"
+        />
+        <button
+          type="submit"
+          className="rounded-lg px-4 py-2 bg-blue-600 text-white disabled:opacity-50"
+        >
+          {pending ? 'Adding…' : 'Add'}
+        </button>
+      </form>
+
+      <div className="mt-3 text-sm text-gray-400">
+        {tickers.length} tickers tracked
+      </div>
+
+      <ul className="mt-2 flex flex-wrap gap-2">
+        {tickers.map(t => (
+          <li key={t.id} className="flex items-center gap-2 rounded-md bg-white/5 px-2 py-1">
+            <span>{t.id}</span>
+            <button
+              type="button"
+              onClick={() => onRemoveTicker(t.id)}
+              className="text-red-400 hover:underline"
+            >
+              remove
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+})

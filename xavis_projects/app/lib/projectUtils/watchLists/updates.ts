@@ -1,7 +1,6 @@
 import yahooFinance from 'yahoo-finance2'
 
-export async function getWatchListUpdates() {
-  const tickers = ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'TSLA', 'NVDA', 'META', 'NFLX', 'AMD', 'INTC']
+export async function getWatchListUpdates(tickers : Array<string>) {
   const results = await Promise.all(
     tickers.map(async (symbol) => {
       try {

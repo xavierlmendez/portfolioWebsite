@@ -1,11 +1,12 @@
 import { getWatchListUpdates } from '@/app/lib/projectUtils/watchLists/updates'
-import { TickerDetails } from '@/app/ui/projects/watchList/tickerDetails'
-
+import WatchListClient from '@/app/ui/projects/watchList/watchListClient'
 
 export default async function WatchList() {
-  const tickersWatched = await getWatchListUpdates()
-
   const summary = 'project to track watched stocks and indicators'
+
+  // 'AAPL', 'MSFT', 'GOOGL', 'AMZN', 'TSLA', 'NVDA', 'META', 'NFLX', 'AMD', 'INTC'
+  const initTickerSymbols = ['AAPL', 'MSFT', 'GOOGL']
+  const initTickerData = await getWatchListUpdates(initTickerSymbols)
 
   return (
     <main className='w-full min-h-screen flex flex-col items-center px-4 py-8'>
@@ -14,11 +15,9 @@ export default async function WatchList() {
         <p className='text-lg text-gray-300'>{summary}</p>
       </section>
       <section>
-        {tickersWatched.map((ticker) => (
-          <TickerDetails key={ticker.id} update={ticker} />
-        ))}
+        <WatchListClient initTickers={initTickerData} />
       </section>
     </main>
-
+  
   )
 }

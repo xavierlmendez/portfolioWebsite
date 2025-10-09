@@ -1,0 +1,55 @@
+'use client'
+
+
+import { useState, useCallback, useTransition } from 'react'
+import { TickerDetails } from '@/app/ui/projects/watchList/tickerDetails'
+import { getWatchListUpdates } from '@/app/lib/projectUtils/watchLists/updates'
+import { WatchListControlPanel } from './watchListControlPanel'
+
+
+type WatchListClientProps = {
+    initTickers: {
+        id: string;
+        title: string;
+        price: string;
+        change: string;
+        volume: string;
+        bid: string;
+        ask: string;
+        dayRange: string;
+    }[]
+}
+
+export default function WatchListClient({ initTickers }: WatchListClientProps) {
+    const [tickers, setTickers] = useState(initTickers)
+    const [pending, startTransition] = useTransition()
+
+    const addTicker = useCallback(async (symbol: string) => {
+        const res = await fetch(`/api/watchlist?ticker=${encodeURIComponent(symbol)}`)
+        if (!res.ok) throw new Error(`Failed to fetch: ${await res.text()}`)
+        const tickerObj = await res.json()
+
+        setTickers(prev => [...prev, tickerObj])
+    }, [])
+
+    const removeTicker = useCallback((id: string) => {
+        setTickers(prev => prev.filter(t => t.id !== id))
+    }, [])
+
+    // Optional: pass a “deferred” wrapper so child doesn’t worry about transitions
+    const addTickerDeferred = useCallback((symbol: string) => {
+        startTransition(() => { void addTicker(symbol) })
+    }, [addTicker, startTransition])
+
+    return (
+        <section>
+            <WatchListControlPanel
+                tickers={tickers}
+                onAddTicker={addTickerDeferred}
+                onRemoveTicker={removeTicker}
+                pending={pending}
+            />
+            {tickers.map(t => <TickerDetails key={t.id} update={t} />)}
+        </section>
+    )
+}

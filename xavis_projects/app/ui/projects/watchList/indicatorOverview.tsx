@@ -32,7 +32,7 @@ export function IndicatorOverview({ indicator }: IndicatorProps) {
   return (
       <div className='basis-full sm:basis-1/2 lg:basis-1/3 p-2'>
         <Link
-          href={`projects/watchList/${indicator.id ?? 0}`}
+          href={`/projects/watchList/${indicator.id ?? 0}`}
           className='block h-full w-full p-6 bg-white hover:bg-gray-200'
         >
           <div className='absolute right-4 top-4'>
