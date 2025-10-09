@@ -3,7 +3,6 @@
 
 import { useState, useCallback, useTransition } from 'react'
 import { TickerDetails } from '@/app/ui/projects/watchList/tickerDetails'
-import { getWatchListUpdates } from '@/app/lib/projectUtils/watchLists/updates'
 import { WatchListControlPanel } from './watchListControlPanel'
 
 
