@@ -17,7 +17,7 @@ const currentProjects = [
   },
   {
     name: 'Stock Watchlist',
-    description: 'A marketplace connecting culinary students with customers, emphasizing scalable system design.',
+    description: 'A Frontend UI to pull stock information for the day from the Yahoo Finance API.',
     status: 'In Progress',
     link: '/projects/watchList',
   },
