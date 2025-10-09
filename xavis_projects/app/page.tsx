@@ -1,25 +1,43 @@
 'use client'
 
+import Link from "next/link"
+
 const currentProjects = [
   {
     name: 'Kafka Visualizer',
     description: 'Monitor and understand real-time message flows in distributed systems using Apache Kafka.',
     status: 'In Progress',
+    link: '/projects/guineaPigProjects/kafkaFrontEnd',
   },
   {
     name: 'Text Message Service Interface',
     description: 'A frontend UI for testing and visualizing backend messaging API integrations.',
     status: 'Prototype',
+    link: '/guineaPigProjects/smsInterfaceWrapper',
   },
   {
-    name: 'Culinary Connection',
+    name: 'Stock Watchlist',
     description: 'A marketplace connecting culinary students with customers, emphasizing scalable system design.',
-    status: 'Alpha',
+    status: 'In Progress',
+    link: '/projects/watchList',
+  },
+  {
+    name: 'Real-Time Alerts',
+    description: 'A project that will incorporate the Text Message Service and Stock Watchlist to provide real time alerts based off indicators.',
+    status: 'Exploring',
+    link: '/projects/alerts',
+  },
+  {
+    name: 'Strategy Backtester',
+    description: 'This will serve as a pre-cursor to Bot Maker to start building the infrastructure to store analytical data and display it via the displaying and analysis of indicators created in Stategy Backtester',
+    status: 'Exploring',
+    link: '/projects/strategyBacktester',
   },
   {
     name: 'Bot Maker',
-    description: 'An experimentation ground for algorithmic trading bots and analytics tools.',
+    description: 'An experimentation ground for algorithmic trading / general ML bots and analytics tools.',
     status: 'Exploring',
+    link: '',
   },
 ]
 
@@ -56,7 +74,7 @@ export default function LandingPage() {
           Every project is built to be a learning experience, starting simple, but structured for future scalability. Expect layered architectures, robust API boundaries, and intentional trade-offs between impact, speed and maintainability.
         </p>
         <ul className='list-disc list-inside text-gray-400 space-y-1 ml-4'>
-          <li>Cloud-native first: AWS, containerization, and CI/CD</li>
+          <li>Cloud-native first: AWS, containerization, and CI/CD (currently hosted on vercel as a FE only site)</li>
           <li>Testable APIs: REST, event-driven patterns, and contract validation</li>
           <li>Clean separation between frontend skins and backend logic</li>
         </ul>
@@ -75,11 +93,13 @@ export default function LandingPage() {
         <h2 className='text-2xl font-semibold mb-4 text-white'>Current Projects</h2>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
           {currentProjects.map((proj) => (
-            <div key={proj.name} className='bg-gray-800 rounded-xl p-4 flex flex-col shadow hover:scale-[1.025] transition-transform'>
-              <h3 className='text-lg font-semibold text-emerald-300'>{proj.name}</h3>
-              <p className='text-gray-300 text-sm mb-1'>{proj.description}</p>
-              <span className='text-xs bg-gray-700 text-emerald-400 rounded-full px-2 py-1 self-start'>{proj.status}</span>
-            </div>
+            <a href={proj.link}>
+              <div key={proj.name} className='bg-gray-800 rounded-xl p-4 flex flex-col shadow hover:scale-[1.025] transition-transform'>
+                <h3 className='text-lg font-semibold text-emerald-300'>{proj.name}</h3>
+                <p className='text-gray-300 text-sm mb-1'>{proj.description}</p>
+                <span className='text-xs bg-gray-700 text-emerald-400 rounded-full px-2 py-1 self-start'>{proj.status}</span>
+              </div>
+            </a>
           ))}
         </div>
       </section>
