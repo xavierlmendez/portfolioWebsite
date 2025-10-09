@@ -3,7 +3,7 @@ import { TickerDetails } from '@/app/ui/projects/watchList/tickerDetails'
 
 
 export default async function WatchList() {
-    const tickersWatched = await getWatchListUpdates()
+    const tickersWatched = await getWatchListUpdates(['AAPL', 'NVDA', 'PAYC'])
    
     return (
       <ul>
