@@ -8,7 +8,11 @@ export async function getHomeRoute() {
             method: 'GET',
             headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         })
-        return 'Connected';
+        if (res.ok) {
+            return 'Connected';
+        } else {
+            return 'Connection Unhealthy'
+        }
     } catch (err) {
         console.log(err)
         return 'No Connection Found';
