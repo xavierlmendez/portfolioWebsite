@@ -11,7 +11,7 @@ const currentProjects = [
     name: 'Text Message Service Interface',
     description: 'A frontend UI for testing and visualizing backend messaging API integrations.',
     status: 'Prototype',
-    link: '/guineaPigProjects/smsInterfaceWrapper',
+    link: '/projects/guineaPigProjects/smsInterfaceWrapper',
   },
   {
     name: 'Stock Watchlist',

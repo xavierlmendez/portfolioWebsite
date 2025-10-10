@@ -17,6 +17,22 @@ export async function getHomeRoute() {
         console.log(err)
         return 'No Connection Found';
     }
-
 }
 
+export async function getAlertPoll() {
+
+    try {
+        const res = await fetch(`${BASE}/alertPoll`, {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        })
+        if (res.ok) {
+            return 'Connected';
+        } else {
+            return 'Connection Unhealthy'
+        }
+    } catch (err) {
+        console.log(err)
+        return 'No Connection Found';
+    }
+}
