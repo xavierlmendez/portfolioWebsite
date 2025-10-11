@@ -1,6 +1,8 @@
 import yahooFinance from 'yahoo-finance2'
 
-export async function getWatchListUpdates(tickers : Array<string>) {
+const BASE = process.env.BOT_MAKER_API_URL
+
+export async function getWatchListUpdates(tickers: Array<string>) {
   const results = await Promise.all(
     tickers.map(async (symbol) => {
       try {
@@ -33,6 +35,17 @@ export async function getWatchListUpdates(tickers : Array<string>) {
 
   return results
 }
+
+export async function getWatchListData(watchlistId: string) {
+
+  const url = new URL(`${BASE}/watchListData`);
+  url.searchParams.set('watchlistId', watchlistId);
+
+  const res = await fetch(url.toString(), { headers: { Accept: 'application/json' } });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return res.json();
+}
+
 
 // Dummy data function
 export async function getIndicator(_indicatorId: string) {
