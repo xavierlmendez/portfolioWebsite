@@ -35,7 +35,6 @@ export default function WatchListClient({ initTickers }: WatchListClientProps) {
         setTickers(prev => prev.filter(t => t.id !== id))
     }, [])
 
-    // Optional: pass a “deferred” wrapper so child doesn’t worry about transitions
     const addTickerDeferred = useCallback((symbol: string) => {
         startTransition(() => { void addTicker(symbol) })
     }, [addTicker, startTransition])
