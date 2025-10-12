@@ -26,14 +26,14 @@ export default async function Projects() {
       title: 'Real-time Alerts',
       description:
         'An automated system for delivering SMS alerts to users when specified stock price conditions or signals are met. Features customizable alert thresholds, instant notification delivery, and integration with watchlists for hands-off market monitoring.',
-      link: '/projects/stock/real-time-alerts',
+      link: '/projects/alerts',
       tags: ['Finance', 'Stocks', 'Alerts', 'SMS', 'Automation'],
     },
     {
       title: 'Strategy Backtester',
       description:
         'A flexible environment for simulating and visualizing trading strategies over historical stock market data. Supports custom rule creation, performance analytics, and side-by-side comparison of multiple strategies to inform real-world trading decisions.',
-      link: '/projects/stock/strategy-backtester',
+      link: '/projects/projects/strategyBacktesterr',
       tags: ['Finance', 'Stocks', 'Strategy', 'Backtesting', 'Analytics', 'Visualization'],
     },
     {

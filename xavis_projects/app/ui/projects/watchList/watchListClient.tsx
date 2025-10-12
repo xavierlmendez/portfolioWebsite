@@ -49,6 +49,11 @@ export default function WatchListClient({ initTickers }: WatchListClientProps) {
                 pending={pending}
             />
             {tickers.map(t => <TickerDetails key={t.id} update={t} />)}
+            {pending && (
+                <div className="mt-6 flex justify-center items-center">
+                    <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+                </div>
+            )}
         </section>
     )
 }

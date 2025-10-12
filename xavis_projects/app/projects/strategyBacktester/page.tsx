@@ -1,6 +1,7 @@
 'use client'
 
-import BarChart from '@/app/ui/projects/stategyBacktester/BarChar';
+import BarChart from '@/app/ui/projects/stategyBacktester/BarChart';
+import {IndicatorManipulator} from '@/app/ui/projects/stategyBacktester/IndicatorManipulator';
 import { Header } from '../../ui/page/header';
 import { UnderDevelopment } from '../../ui/page/underDevelopment';
 
@@ -13,7 +14,15 @@ export default function LinksPage() {
       <Header title={pageTitle} description={''} />
       <UnderDevelopment message='' />
       <Header title={"Inital Chart more to come muhohaha"} description={''} />
-      <BarChart/>
+
+      <div className='w-full grid grid-cols-3 gap-4'>
+        <div className="col-span-2">
+          <BarChart />
+        </div>
+        <div>
+          <IndicatorManipulator/>
+        </div>
+      </div>
     </main>
   )
 }

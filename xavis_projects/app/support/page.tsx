@@ -1,7 +1,6 @@
 'use client'
 
 import { Header } from '../ui/page/header'
-import Image from 'next/image'
 
 export default function SupportPage() {
   const pageTitle = 'Support This Project'
@@ -68,16 +67,6 @@ export default function SupportPage() {
             </a>
           ))}
         </div>
-      </section>
-
-      <section className='w-full max-w-4xl flex justify-center'>
-        <Image
-          src='/public/coffee_support.svg'
-          alt='Coffee cup illustration'
-          width={300}
-          height={300}
-          className='opacity-80'
-        />
       </section>
     </main>
   )

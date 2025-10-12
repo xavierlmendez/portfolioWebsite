@@ -14,8 +14,8 @@ type Ticker = {
 }
 
 type Props = {
-  tickers: Ticker[] 
-  onAddTicker: (symbol: string) => void 
+  tickers: Ticker[]
+  onAddTicker: (symbol: string) => void
   onRemoveTicker: (id: string) => void
   pending?: boolean
 }
@@ -26,18 +26,26 @@ export const WatchListControlPanel = memo(function WatchListControlPanel({
   onRemoveTicker,
   pending = false,
 }: Props) {
-  const [symbol, setSymbol] = useState('')
+  const [symbol, setSymbol] = useState('');
 
   const submit = (e: FormEvent) => {
-    e.preventDefault()
-    const cleaned = symbol.trim().toUpperCase()
-    if (!cleaned) return
-    onAddTicker(cleaned)
-    setSymbol('')
+
+    e.preventDefault();
+    const cleaned = symbol.trim().toUpperCase();
+    if (!cleaned) { return; }
+
+    const symbolAlreadyInTickers = tickers.some(ticker => ticker.id.includes(cleaned));
+    if (symbolAlreadyInTickers) {
+      alert('Ticker is already in watchlist.');
+      return;
+    }
+
+    onAddTicker(cleaned);
+    setSymbol('');
   }
 
   return (
-    <div className="rounded-xl w-full border border-white/10 p-4">
+    <div className="rounded-xl w-full border border-white/10 bg-gray-800 shadow-lg p-4">
       <form onSubmit={submit} className="flex gap-2">
         <input
           value={symbol}
@@ -49,11 +57,11 @@ export const WatchListControlPanel = memo(function WatchListControlPanel({
           type="submit"
           className="rounded-lg px-4 py-2 bg-blue-600 text-white disabled:opacity-50"
         >
-          {pending ? 'Adding…' : 'Add'}
+          Add
         </button>
       </form>
 
-      <div className="mt-3 text-sm text-gray-400">
+      <div className="mt-3 text-sm text-white">
         {tickers.length} tickers tracked
       </div>
 
@@ -66,7 +74,7 @@ export const WatchListControlPanel = memo(function WatchListControlPanel({
               onClick={() => onRemoveTicker(t.id)}
               className="text-red-400 hover:underline"
             >
-              remove
+              Delete
             </button>
           </li>
         ))}
