@@ -17,19 +17,16 @@ type Props = {
   tickers: Ticker[]
   onAddTicker: (symbol: string) => void
   onRemoveTicker: (id: string) => void
-  pending?: boolean
 }
 
 export const WatchListControlPanel = memo(function WatchListControlPanel({
   tickers,
   onAddTicker,
-  onRemoveTicker,
-  pending = false,
+  onRemoveTicker
 }: Props) {
   const [symbol, setSymbol] = useState('');
 
   const submit = (e: FormEvent) => {
-
     e.preventDefault();
     const cleaned = symbol.trim().toUpperCase();
     if (!cleaned) { return; }

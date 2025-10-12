@@ -46,7 +46,6 @@ export default function WatchListClient({ initTickers }: WatchListClientProps) {
                 tickers={tickers}
                 onAddTicker={addTickerDeferred}
                 onRemoveTicker={removeTicker}
-                pending={pending}
             />
             {tickers.map(t => <TickerDetails key={t.id} update={t} />)}
             {pending && (
