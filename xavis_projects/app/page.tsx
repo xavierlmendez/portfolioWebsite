@@ -35,7 +35,7 @@ const currentProjects = [
     name: 'Bot Maker',
     description: 'An experimentation ground for algorithmic trading / general ML bots and analytics tools.',
     status: 'Exploring',
-    link: '',
+    link: '/projects/botMaker',
   },
 ]
 

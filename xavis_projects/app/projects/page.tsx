@@ -16,6 +16,13 @@ export default async function Projects() {
       tags: ['Template', 'Prototype', 'Learning', 'Backend', 'Sandbox'],
     },
     {
+      title: 'botMaker',
+      description:
+        'An interactive platform for building, training, and evaluating machine learning models directly through a web interface. Users can import data, auto-classify problem types, visualize model performance, and experiment with algorithms in real time. Designed as a dynamic frontend-to-backend integration demo within the portfolio.',
+      link: '/projects/botMaker',
+      tags: ['Machine Learning', 'Data Visualization', 'Interactive', 'Frontend-Backend', 'AI Tools'],
+    },
+    {
       title: 'Watchlist Tracker',
       description:
         'A streamlined tool for monitoring selected stock tickers, visualizing real-time market data, and tracking personalized watchlists. Includes dynamic price updates, indicator tracking, and trend visualization.',

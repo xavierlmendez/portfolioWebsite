@@ -46,7 +46,15 @@ const Navbar = () => {
                       href='/projects/guineaPigProjects'
                       className='block px-4 py-2 hover:bg-gray-100'
                     >
-                      Guinea Pig Projects
+                      Guinea Pig Projects (project home)
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href='/projects/botMaker'
+                      className='block px-4 py-2 hover:bg-gray-100'
+                    >
+                      BotMaker (back logged)
                     </Link>
                   </li>
                   <li>
@@ -54,7 +62,7 @@ const Navbar = () => {
                       href='/projects/watchList'
                       className='block px-4 py-2 hover:bg-gray-100'
                     >
-                      Watch List Tracker
+                      Watch List Tracker (V1)
                     </Link>
                   </li>
                   <li>
@@ -62,7 +70,7 @@ const Navbar = () => {
                       href='/projects/alerts'
                       className='block px-4 py-2 hover:bg-gray-100'
                     >
-                      Real-Time Alerts
+                      Real-Time Alerts (back logged)
                     </Link>
                   </li>
                   <li>
@@ -70,7 +78,7 @@ const Navbar = () => {
                       href='/projects/strategyBacktester'
                       className='block px-4 py-2 hover:bg-gray-100'
                     >
-                      Strategy Backtester
+                      Strategy Backtester (in progress)
                     </Link>
                   </li>
                   <li>
@@ -78,7 +86,7 @@ const Navbar = () => {
                       href='/projects/sentimentAnalyzer'
                       className='block px-4 py-2 hover:bg-gray-100'
                     >
-                      Sentiment Analyzer
+                      Sentiment Analyzer (back logged)
                     </Link>
                   </li>
                 </ul>
