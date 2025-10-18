@@ -15,17 +15,15 @@ export default function LinksPage() {
     <main className='w-full min-h-screen flex flex-col items-center px-4 py-8'>
       <Header title={pageTitle} description={''} />
       <UnderDevelopment message='' />
-      <Header title={"Inital Chart more to come muhohaha"} description={''} />
+      <Header title={"Initial UI, BE under development"} description={''} />
 
       <BacktestControlPanel/>
 
-      <div className='w-full grid grid-cols-3 gap-4'>
-        <div className="col-span-2">
+      <div className='w-full grid grid-cols-1 md:grid-cols-3 gap-4'>
+        <div className="md:col-span-2 min-h-80px ">
           <LineChart />
         </div>
-        <div>
-          <IndicatorManipulator/>
-        </div>
+        <IndicatorManipulator/>
       </div>
 
       <BacktestStatistics/>

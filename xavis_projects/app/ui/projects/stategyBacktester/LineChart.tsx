@@ -77,7 +77,7 @@ const LineChart = () => {
           },
       };
 
-    return <Line data={data} options={options} />;
+    return <Line data={data} options={options} style={{ width: '100%', height: '100%' }}/>;
 };
 
 export default LineChart;
