@@ -72,7 +72,7 @@ export default function LandingPage() {
           Every project is built to be a learning experience, starting simple, but structured for future scalability. Expect layered architectures, robust API boundaries, and intentional trade-offs between impact, speed and maintainability.
         </p>
         <ul className='list-disc list-inside text-gray-400 space-y-1 ml-4'>
-          <li>Cloud-native first: AWS, containerization, and CI/CD (currently hosted on vercel as a FE only site with BE on AWS ECS)</li>
+          <li>Cloud-native first: AWS, containerization, and CI/CD</li>
           <li>Testable APIs: REST, event-driven patterns, and contract validation</li>
           <li>Clean separation between frontend skins and backend logic</li>
         </ul>
