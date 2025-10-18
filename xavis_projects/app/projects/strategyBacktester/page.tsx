@@ -1,11 +1,10 @@
 'use client'
 
 import LineChart from '@/app/ui/projects/stategyBacktester/LineChart';
-import {IndicatorManipulator} from '@/app/ui/projects/stategyBacktester/IndicatorManipulator';
+import {IndicatorManipulator} from '@/app/ui/projects/stategyBacktester/Indicator/IndicatorManipulator';
 import {BacktestStatistics} from '@/app/ui/projects/stategyBacktester/BacktestStatistics';
 import {BacktestControlPanel} from '@/app/ui/projects/stategyBacktester/BacktestControlPanel';
 import { Header } from '../../ui/page/header';
-import { UnderDevelopment } from '../../ui/page/underDevelopment';
 
 export default function LinksPage() {
 

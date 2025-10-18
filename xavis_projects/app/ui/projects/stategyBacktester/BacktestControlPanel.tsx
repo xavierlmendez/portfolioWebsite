@@ -10,19 +10,19 @@ export function BacktestControlPanel() {
 
             <div className='w-full grid grid-cols-1 md:grid-cols-6 gap-4 min-h-20'>
                 <div className='md:col-span-2 rounded-xl border border-white/10 bg-gray-800 shadow-lg'>
-                    <p className='text-lg text-gray-300'>ticker adder/subtracter</p>
+                    <p className='text-lg text-gray-300'>Add/Remove</p>
                 </div>
 
                 <div className='rounded-xl border border-white/10 bg-gray-800 shadow-lg'>
-                    <p className='text-lg text-gray-300'>initialvalue</p>
+                    <p className='text-lg text-gray-300'>Initial Capital</p>
                 </div>
 
                 <div className='md:col-span-2 rounded-xl border border-white/10 bg-gray-800 shadow-lg'>
-                    <p className='text-lg text-gray-300'>start/end date</p>
+                    <p className='text-lg text-gray-300'>Start/End</p>
                 </div>
 
                 <div className='rounded-xl border border-white/10 bg-gray-800 shadow-lg'>
-                    <p className='text-2xl m-6 text-center text-white'>run</p>
+                    <p className='text-2xl m-6 text-center text-white'>Run Test</p>
                 </div>
             </div>
         </div>
