@@ -39,8 +39,12 @@ export function BacktestControlPanel() {
                     </div>
                 </div>
 
-                <div className='rounded-xl border border-white/10 bg-gray-800 shadow-lg'>
-                    <p className='text-2xl m-6 text-center text-white'>Run Test</p>
+                <div className='rounded-xl border border-white/10 bg-gray-800 shadow-lg flex flex-col justify-between p-4'>
+                    <button
+                        className="rounded-lg h-full bg-blue-600 text-white disabled:opacity-50"
+                    >
+                        <p className='text-xl text-center text-white'>Run Test</p>
+                    </button>
                 </div>
             </div>
         </div>

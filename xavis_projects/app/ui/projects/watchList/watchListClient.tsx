@@ -41,17 +41,19 @@ export default function WatchListClient({ initTickers }: WatchListClientProps) {
 
     return (
         <section>
+            <div className='mb-6'>
             <WatchListControlPanel
                 tickers={tickers}
                 onAddTicker={addTickerDeferred}
                 onRemoveTicker={removeTicker}
             />
+            </div>
             {tickers.map(t => <TickerDetails key={t.id} update={t} />)}
-            {pending && (
-                <div className="mt-6 flex justify-center items-center">
-                    <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
-                </div>
-            )}
+            <div className='mt-6 flex justify-center items-center'>
+                {pending && (
+                    <div className='w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin'></div>
+                )}
+            </div>
         </section>
     )
 }
