@@ -47,7 +47,7 @@ export default async function Projects() {
       title: 'Sentiment Analyzer',
       description:
         'A toolkit for webscraping financial news and social media sources, performing sentiment analysis, and surfacing actionable insights. Enables correlation of market sentiment with price movements, supporting more informed investment decisions.',
-      link: '/projects/stock/sentiment-analyzer',
+      link: '/projects/stock/sentimentAnalyzer',
       tags: ['NLP', 'Sentiment Analysis', 'Webscraping', 'Finance', 'Data Science'],
     }
   ];
