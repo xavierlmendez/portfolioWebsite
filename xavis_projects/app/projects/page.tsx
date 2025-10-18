@@ -40,7 +40,7 @@ export default async function Projects() {
       title: 'Strategy Backtester',
       description:
         'A flexible environment for simulating and visualizing trading strategies over historical stock market data. Supports custom rule creation, performance analytics, and side-by-side comparison of multiple strategies to inform real-world trading decisions.',
-      link: '/projects/projects/strategyBacktesterr',
+      link: '/projects/projects/strategyBacktester',
       tags: ['Finance', 'Stocks', 'Strategy', 'Backtesting', 'Analytics', 'Visualization'],
     },
     {
