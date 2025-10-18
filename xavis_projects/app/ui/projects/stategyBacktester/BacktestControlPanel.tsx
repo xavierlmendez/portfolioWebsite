@@ -11,7 +11,7 @@ export function BacktestControlPanel() {
     return (
         <div id='BacktestControlPanel' className='w-full h-full text-center pb-10 mx-0 px-0'>
             <header className='text-4xl font-bold text-white pb-2'>
-                <p className='text-sm text-gray-300'>Modify your strategy's preconditions and scope</p>
+                <p className='text-sm text-gray-300'>Modify your the strategy preconditions and scope</p>
             </header>
 
             <div className='w-full grid grid-cols-1 md:grid-cols-6 gap-4 min-h-20'>
