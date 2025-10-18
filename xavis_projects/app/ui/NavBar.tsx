@@ -15,7 +15,7 @@ const Navbar = () => {
             <ul id='navLinks' className='hidden text-l md:flex items-center gap-x-8 text-black font-medium'>
 
               <li>
-                <a target="_blank" rel="noopener noreferrer" href='https://xavi-codeco.com'
+                <a target='_blank' rel='noopener noreferrer' href='https://xavi-codeco.com'
                   className='block px-4 py-2 hover:text-blue-600 transition'
                 >
                   Xavi Code & Co
@@ -46,7 +46,7 @@ const Navbar = () => {
                       href='/projects/guineaPigProjects'
                       className='block px-4 py-2 hover:bg-gray-100'
                     >
-                      Guinea Pig Projects (project home)
+                      Guinea Pig Projects
                     </Link>
                   </li>
                   <li>

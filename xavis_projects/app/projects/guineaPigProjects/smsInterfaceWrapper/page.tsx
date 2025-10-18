@@ -13,8 +13,8 @@ export default function SmsInterfaceWrapperPage() {
     <>
       <Header title={pageTitle} description={pageDescription} />
 
-      <div className="container mx-auto px-6 py-10">
-        <div className="max-w-lg mx-auto bg-gray-800 rounded-xl shadow-lg p-6">
+      <div className='container mx-auto px-6 py-10'>
+        <div className='max-w-lg mx-auto bg-gray-800 rounded-xl shadow-lg p-6'>
           <TextForm />
         </div>
       </div>
