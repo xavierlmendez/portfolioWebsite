@@ -14,7 +14,6 @@ export default function LinksPage() {
   return (
     <main className='w-full min-h-screen flex flex-col items-center px-4 py-8'>
       <Header title={pageTitle} description={''} />
-      <UnderDevelopment message='' />
       <Header title={"Initial UI, BE under development"} description={''} />
 
       <BacktestControlPanel/>
