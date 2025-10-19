@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X, ChevronDown } from 'lucide-react'; // optional icons (shipped in many stacks)
+import { Menu, X } from 'lucide-react';
 import { NavLinkComponent } from './NavLinkComponent';
 
 export default function Navbar() {
@@ -47,7 +47,7 @@ export default function Navbar() {
           id='navLinks'
           className='hidden text-l md:flex items-center gap-x-8 text-black mr-10'
         >
-          {navLinksList.map((navLink) => (<NavLinkComponent values={navLink} />))}
+          {navLinksList.map((navLink) => (<NavLinkComponent key={navLink.href} values={navLink} />))}
         </ul>
       </nav>
 
@@ -77,15 +77,15 @@ export default function Navbar() {
                 Projects
               </div>
               <ul className='space-y-0.5'>
-                {projectsList.map((p) => (
-                  <li key={p.href}>
+                {projectsList.map((project) => (
+                  <li key={project.href}>
                     <Link
-                      href={p.href}
+                      href={project.href}
                       className='block px-3 py-2 rounded-md hover:bg-black/10'
                     >
-                      {p.title}
-                      {p.status !== 'Live' && (
-                        <span className='ml-2 text-xs opacity-80'>({p.status})</span>
+                      {project.title}
+                      {project.status !== 'Live' && (
+                        <span className='ml-2 text-xs opacity-80'>({project.status})</span>
                       )}
                     </Link>
                   </li>
