@@ -14,7 +14,7 @@ export default function Navbar() {
     container
     mx-auto
     flex items-center justify-between
-    h-16 px-6
+    h-16 px-2 md:px-6
     rounded-2xl
     bg-[#f07a05]/90
     backdrop-blur-lg
