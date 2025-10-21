@@ -19,7 +19,8 @@ type TickerProps = {
   
     return (
     <li className='mb-4 w-full overflow-hidden rounded-xl shadow-lg transition hover:shadow-xl'>
-      <Link href={`watchList/details/${update.id}`} className='block bg-white p-6 rounded-xl hover:bg-gray-50'>
+     {/* below div in the future will be a Link with href={`watchList/details/${update.id}`}  */}
+      <div className='block bg-white p-6 rounded-xl hover:bg-gray-50'>
         <div className="grid grid-cols-1 md:grid-cols-7 items-center gap-6 text-gray-800">
           <h2 className={`text-xl font-bold ${titleColor} col-span-1 md:col-span-1 text-left md:text-left`}>
             {update.title}
@@ -55,7 +56,7 @@ type TickerProps = {
             <span>{update.dayRange.replace('Day Range: ', '')}</span>
           </div>
         </div>
-      </Link>
+      </div>
       </li>
     )
   }
