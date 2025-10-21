@@ -1,5 +1,4 @@
-import Link from 'next/link'
-
+// import Link from 'next/link' uncomment when ready to use details page
 type TickerProps = {
     update: {
       id: string
