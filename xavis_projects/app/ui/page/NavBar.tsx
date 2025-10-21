@@ -53,7 +53,7 @@ export default function Navbar() {
 
       {/* Mobile menu panel */}
       {open && (
-        <div className='md:hidden border-t border-black/10 bg-[#f07a05]'>
+        <div className='md:hidden border-t border-black/10 bg-[#f07a05] rounded-md'>
           <ul className='px-4 py-2 space-y-1 text-base text-black'>
             <li>
               <a
