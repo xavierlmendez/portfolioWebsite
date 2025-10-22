@@ -19,8 +19,17 @@ export function BacktestControlPanel() {
                     <p className='text-lg text-gray-300'>Add/Remove</p>
                 </div>
 
-                <div className='rounded-xl border border-white/10 bg-gray-800 shadow-lg'>
-                    <p className='text-lg text-gray-300'>Initial Capital</p>
+                <div className='rounded-xl border border-white/10 bg-gray-800 shadow-lg px-4 py-3 flex flex-col items-center space-y-3'>
+                    <p className='text-lg font-medium text-gray-300 text-center'>Initial Capital</p>
+
+                    <input
+                        id='initialCapitalValue'
+                        type='number'
+                        step='500'
+                        defaultValue={5000}
+                        className='w-28 text-center rounded-md bg-gray-700 text-white border border-gray-600 
+                                    focus:outline-none focus:ring-2 focus:ring-blue-500 py-1.5'
+                    />
                 </div>
 
                 <div className='md:col-span-2 rounded-xl border border-white/10 bg-gray-800 shadow-lg'>
