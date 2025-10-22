@@ -66,7 +66,10 @@ export default function Navbar() {
               </a>
             </li>
             <li>
-              <Link href='/about' className='block px-3 py-2 rounded-md hover:bg-black/10'>
+              <Link href='/about' 
+              className='block px-3 py-2 rounded-md hover:bg-black/10'
+              onClick={() => setOpen(false)}
+              >
                 About
               </Link>
             </li>
@@ -82,6 +85,7 @@ export default function Navbar() {
                     <Link
                       href={project.href}
                       className='block px-3 py-2 rounded-md hover:bg-black/10'
+                      onClick={() => setOpen(false)}
                     >
                       {project.title}
                       {project.status !== 'Live' && (
@@ -97,12 +101,16 @@ export default function Navbar() {
               <Link
                 href='/resourcesAndBlog'
                 className='block px-3 py-2 rounded-md hover:bg-black/10'
+                onClick={() => setOpen(false)}
               >
                 Resources &apos;n Blog
               </Link>
             </li>
             <li>
-              <Link href='/support' className='block px-3 py-2 rounded-md hover:bg-black/10'>
+              <Link href='/support' 
+              className='block px-3 py-2 rounded-md hover:bg-black/10'
+              onClick={() => setOpen(false)}
+              >
                 Support This Project
               </Link>
             </li>
