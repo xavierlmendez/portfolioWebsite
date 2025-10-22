@@ -35,7 +35,7 @@ export function NavLinkComponent({ values }: { values: NavLinkComponent }) {
                         className='absolute left-0 top-full mt-0 hidden w-56 rounded-md overflow-hidden 
              bg-[#f07a05]/95 shadow-lg group-hover:block z-50 text-sm text-black'
                     >
-                        {values.dropdownList.map((project: dropdownValues, idx) => (
+                        {values.dropdownList.map((project: dropdownValues) => (
                             <li key={project.href}>
                                 <Link
                                     href={project.href}
