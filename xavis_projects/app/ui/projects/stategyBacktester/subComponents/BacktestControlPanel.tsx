@@ -1,22 +1,40 @@
 'use client'
 
-import { CalendarButton } from "../../common/CalenderButton"
+import { CalendarButton } from "../../../common/CalenderButton"
+import { memo } from 'react'
+
+type Props = {
+      onOpenTickersModal?: () => void
+      tickerCount: number
+}
 
 const handleOpenCalendar = (type: string) => {
     console.log(`Opening ${type} calendar...`);
     // later: setCalendarType(type), open modal, etc.
 };
 
-export function BacktestControlPanel() {
+export const BacktestControlPanel = memo(function WatchListControlPanel({
+    onOpenTickersModal,
+    tickerCount
+}: Props) {
+
     return (
         <div id='BacktestControlPanel' className='w-full h-full text-center pb-10 mx-0 px-0'>
             <header className='text-4xl font-bold text-white pb-2'>
-                <p className='text-sm text-gray-300'>Modify your the strategy preconditions and scope</p>
+                <p className='text-sm text-gray-300'>Modify strategy preconditions and scope</p>
             </header>
 
             <div className='w-full grid grid-cols-1 md:grid-cols-6 gap-4 min-h-20'>
-                <div className='md:col-span-2 rounded-xl border border-white/10 bg-gray-800 shadow-lg'>
-                    <p className='text-lg text-gray-300'>Add/Remove</p>
+                <div className='rounded-xl md:col-span-2 border border-white/10 bg-gray-800 shadow-lg px-4 py-3 flex flex-col items-center space-y-3'>
+                        <div className='text-lg font-medium text-gray-300 text-center'>Total Tickers Traded: {tickerCount}</div>
+                        <button
+                            type="button"
+                            onClick={onOpenTickersModal}
+                            className='w-28 text-center rounded-md bg-gray-700 text-white border border-gray-600 
+                                    focus:outline-none focus:ring-2 focus:ring-blue-500 py-1.5 hover:underline'
+                        >
+                            Manage
+                        </button>
                 </div>
 
                 <div className='rounded-xl border border-white/10 bg-gray-800 shadow-lg px-4 py-3 flex flex-col items-center space-y-3'>
@@ -58,4 +76,4 @@ export function BacktestControlPanel() {
             </div>
         </div>
     )
-}
+})
