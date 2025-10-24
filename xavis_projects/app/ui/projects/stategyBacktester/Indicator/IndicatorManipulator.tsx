@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { Minus, Plus } from 'lucide-react'
 import { IndicatorAddForm } from './IndicatorAddForm'
 
@@ -8,46 +8,40 @@ type Indicator = {
     id: string
     indicatorName: string
     trigger: 'Buy' | 'Sell'
-}
+  }
+  
+  type NewIndicator = {
+    indicatorName: string
+    trigger: 'Buy' | 'Sell'
+  }
 
-export function IndicatorManipulator() {
-    const [indicators, setIndicators] = useState<Indicator[]>([
-        { id: '1', indicatorName: 'RMSE', trigger: 'Buy' },
-        { id: '2', indicatorName: 'Percent Amt.', trigger: 'Sell' },
-    ])
-
-    const [showModal, setShowModal] = useState(false)
-    const [newIndicator, setNewIndicator] = useState({
-        indicatorName: '',
-        trigger: 'Buy' as 'Buy' | 'Sell',
-    })
+type IndicatorManipulatorProps = {
+    indicators: Indicator[]
+    showModal: boolean
+    onOpen: () => void
+    onClose: () => void
+    onAddIndicator: () => void
+    onRemove: (id: string) => void
+    newIndicator: NewIndicator
+    setNewIndicator: (v: NewIndicator) => void
+  }
+  
+  export function IndicatorManipulator({
+    indicators,
+    showModal,
+    onOpen,
+    onClose,
+    onAddIndicator,
+    onRemove,
+    newIndicator,
+    setNewIndicator,
+  }: IndicatorManipulatorProps) {
 
     const inputRef = useRef<HTMLInputElement | null>(null)
 
-    const handleOpen = () => setShowModal(true)
-    const handleClose = () => {
-        setShowModal(false)
-        setNewIndicator({ indicatorName: '', trigger: 'Buy' })
-    }
-
-    const handleAddIndicator = () => {
-        if (!newIndicator.indicatorName.trim()) return
-        const newItem: Indicator = {
-            id: Date.now().toString(),
-            indicatorName: newIndicator.indicatorName.trim(),
-            trigger: newIndicator.trigger,
-        }
-        setIndicators(prev => [...prev, newItem])
-        handleClose()
-    }
-
-    const handleRemove = (id: string) => {
-        setIndicators(prev => prev.filter(i => i.id !== id))
-    }
-
     useEffect(() => {
         const onKey = (e: KeyboardEvent) => {
-            if (e.key === 'Escape') handleClose()
+            if (e.key === 'Escape') onClose()
         }
         if (showModal) {
             document.addEventListener('keydown', onKey)
@@ -76,7 +70,7 @@ export function IndicatorManipulator() {
                    backdrop-blur shadow-xl p-4 flex flex-col items-center'
             >
                 <button
-                    onClick={handleOpen}
+                    onClick={onOpen}
                     className='flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 text-white 
                      hover:bg-blue-500 active:bg-blue-700 transition mb-4'
                 >
@@ -104,7 +98,7 @@ export function IndicatorManipulator() {
                                     </p>
                                 </div>
                                 <button
-                                    onClick={() => handleRemove(i.id)}
+                                    onClick={() => onRemove(i.id)}
                                     className='text-gray-400 hover:text-red-500 transition'
                                     aria-label='Remove indicator'
                                     title='Remove'
@@ -121,8 +115,8 @@ export function IndicatorManipulator() {
                 <IndicatorAddForm
                     newIndicator={newIndicator}
                     setNewIndicator={setNewIndicator}
-                    handleAddIndicator={handleAddIndicator}
-                    handleClose={handleClose}
+                    handleAddIndicator={onAddIndicator}
+                    handleClose={onClose}
                 />
             )}
         </div>
