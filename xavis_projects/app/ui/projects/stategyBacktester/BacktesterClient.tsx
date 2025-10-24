@@ -24,28 +24,34 @@ export default function BacktesterClient({ initTickers }: BacktesterClientProps)
     setTickers(prev => prev.filter(t => t.id !== id))
   }, [])
 
+  const runTest = useCallback(() => {
+    alert("Under development, check back soon!")
+    console.log("running back test dummy function")
+  }, [])
+
   return (
-    <section className="mx-auto max-w-7xl px-6 md:px-8 py-6 space-y-6">
+    <section className='mx-auto max-w-7xl px-6 md:px-8 py-6 space-y-6'>
       <BacktestControlPanel
         onOpenTickersModal={() => setShowTickers(true)}
+        onRunTest={runTest}
         tickerCount={tickers.length}
       />
 
-      <div className="grid grid-cols-12 gap-6">
-        <div className="col-span-12 md:col-span-8">
-          <div className="rounded-2xl border border-white/10 bg-gradient-to-b from-gray-800/90 to-gray-800/70 backdrop-blur-md shadow-xl p-4 md:p-5 min-h-[280px]">
+      <div className='grid grid-cols-12 gap-6'>
+        <div className='col-span-12 md:col-span-8'>
+          <div className='rounded-2xl border border-white/10 bg-gradient-to-b from-gray-800/90 to-gray-800/70 backdrop-blur-md shadow-xl p-4 md:p-5 min-h-[280px]'>
             <LineChart />
           </div>
         </div>
 
-        <div className="col-span-12 md:col-span-4">
-          <div className="rounded-2xl border border-white/10 bg-gradient-to-b from-gray-800/90 to-gray-800/70 backdrop-blur-md shadow-xl p-4 md:p-5">
+        <div className='col-span-12 md:col-span-4'>
+          <div className='rounded-2xl border border-white/10 bg-gradient-to-b from-gray-800/90 to-gray-800/70 backdrop-blur-md shadow-xl p-4 md:p-5'>
             <IndicatorManipulator />
           </div>
         </div>
       </div>
 
-      <div className="rounded-2xl border border-white/10 bg-gradient-to-b from-gray-800/90 to-gray-800/70 backdrop-blur-md shadow-xl p-4 md:p-5">
+      <div className='rounded-2xl border border-white/10 bg-gradient-to-b from-gray-800/90 to-gray-800/70 backdrop-blur-md shadow-xl p-4 md:p-5'>
         <BacktestStatistics />
       </div>
 
