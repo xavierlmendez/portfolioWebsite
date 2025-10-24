@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { Minus, Plus, X } from 'lucide-react'
+import { Minus, Plus } from 'lucide-react'
 import { IndicatorAddForm } from './IndicatorAddForm'
 
 type Indicator = {
