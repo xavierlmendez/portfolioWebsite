@@ -7,17 +7,23 @@ type Props = {
     onOpenTickersModal: () => void
     onRunTest: () => void
     tickerCount: number
+    onOpenStartModal: () => void
+    onOpenStopModal: () => void
+    startDate: Date
+    stopDate: Date
 }
 
-const handleOpenCalendar = (type: string) => {
-    console.log(`Opening ${type} calendar...`)
-}
 
-export const BacktestControlPanel = memo(function BacktestControlPanel({
-    onOpenTickersModal,
-    onRunTest,
-    tickerCount
-}: Props) {
+export const BacktestControlPanel = memo(function BacktestControlPanel(
+    {
+        onOpenTickersModal,
+        onRunTest,
+        tickerCount,
+        onOpenStartModal,
+        onOpenStopModal,
+        startDate,
+        stopDate
+    }: Props) {
     return (
         <div id='BacktestControlPanel' className='w-full h-full text-center pb-10'>
             <header className='text-4xl font-bold text-white pb-2'>
@@ -50,7 +56,7 @@ export const BacktestControlPanel = memo(function BacktestControlPanel({
                             step='500'
                             defaultValue={5000}
                             className='w-28 text-center rounded-md bg-gray-800 text-white border border-white/20 
-                         focus:outline-none focus:ring-2 focus:ring-blue-500 py-1.5 shadow-inner'
+                            focus:outline-none focus:ring-2 focus:ring-blue-500 py-1.5 shadow-inner'
                         />
                     </div>
                 </div>
@@ -61,15 +67,15 @@ export const BacktestControlPanel = memo(function BacktestControlPanel({
                             <div className='p-4'>
                                 <CalendarButton
                                     label='Start'
-                                    date={new Date()}
-                                    onClick={() => handleOpenCalendar('start')}
+                                    date={startDate}
+                                    onClickFunction={onOpenStartModal}                              
                                 />
                             </div>
                             <div className='p-4'>
                                 <CalendarButton
                                     label='Stop'
-                                    date={new Date()}
-                                    onClick={() => handleOpenCalendar('stop')}
+                                    date={stopDate}
+                                    onClickFunction={onOpenStopModal}
                                 />
                             </div>
                         </div>
@@ -78,7 +84,7 @@ export const BacktestControlPanel = memo(function BacktestControlPanel({
 
                 <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl p-[1px]">
                     <div className="rounded-2xl bg-gray-900/70 backdrop-blur border border-white/10 shadow-xl 
-                  flex items-center justify-center h-full p-4">
+                        flex items-center justify-center h-full p-4">
                         <button
                             type="button"
                             onClick={onRunTest}

@@ -1,12 +1,10 @@
 'use client'
 
 import { X } from 'lucide-react'
+import { NewIndicator } from '../types'
 
 type IndicatorAddFormProps = {
-  newIndicator: {
-    indicatorName: string
-    trigger: 'Buy' | 'Sell'
-  }
+  newIndicator: NewIndicator
   setNewIndicator: (value: { indicatorName: string; trigger: 'Buy' | 'Sell' }) => void
   handleAddIndicator: () => void
   handleClose: () => void
@@ -62,7 +60,7 @@ export function IndicatorAddForm({
                     setNewIndicator({ ...newIndicator, indicatorName: e.target.value })
                   }
                   className='rounded-md bg-gray-800 text-white border border-white/15 
-                             focus:outline-none focus:ring-2 focus:ring-blue-500 px-3 py-2'
+                              focus:outline-none focus:ring-2 focus:ring-blue-500 px-3 py-2'
                 />
               </div>
 
@@ -80,7 +78,7 @@ export function IndicatorAddForm({
                     })
                   }
                   className='rounded-md bg-gray-800 text-white border border-white/15 
-                             focus:outline-none focus:ring-2 focus:ring-blue-500 px-3 py-2'
+                              focus:outline-none focus:ring-2 focus:ring-blue-500 px-3 py-2'
                 >
                   <option value='Buy'>Buy</option>
                   <option value='Sell'>Sell</option>
@@ -92,14 +90,14 @@ export function IndicatorAddForm({
               <button
                 onClick={handleClose}
                 className='px-4 py-2 rounded-lg border border-white/15 text-white/80
-                           hover:bg-white/5 transition'
+                            hover:bg-white/5 transition'
               >
                 Cancel
               </button>
               <button
                 onClick={handleAddIndicator}
                 className='px-4 py-2 rounded-lg bg-blue-600 text-white
-                           hover:bg-blue-500 active:bg-blue-700 transition'
+                            hover:bg-blue-500 active:bg-blue-700 transition'
               >
                 Add Indicator
               </button>

@@ -1,13 +1,12 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-
-export type TickerItem = { id: string }
+import { Ticker } from '../types'
 
 type TickerModalProps = {
   open: boolean
   onClose: () => void
-  tickers: TickerItem[]
+  tickers: Ticker[]
   onAddTicker: (symbol: string) => void
   onRemoveTicker: (id: string) => void
 }
@@ -69,7 +68,7 @@ export default function TickerModal({
             onChange={(e) => setSymbol(e.target.value)}
             placeholder='Add ticker (e.g., AAPL)'
             className='flex-1 rounded-lg bg-black/30 px-3 py-2 text-white placeholder-gray-400
-                       border border-white/10 focus:outline-none focus:ring-2 focus:ring-blue-500 transition'
+                        border border-white/10 focus:outline-none focus:ring-2 focus:ring-blue-500 transition'
           />
           <button
             type='submit'

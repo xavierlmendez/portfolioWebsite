@@ -3,17 +3,7 @@
 import { useEffect, useRef } from 'react'
 import { Minus, Plus } from 'lucide-react'
 import { IndicatorAddForm } from './IndicatorAddForm'
-
-type Indicator = {
-    id: string
-    indicatorName: string
-    trigger: 'Buy' | 'Sell'
-  }
-  
-  type NewIndicator = {
-    indicatorName: string
-    trigger: 'Buy' | 'Sell'
-  }
+import { Indicator, NewIndicator } from '../types'
 
 type IndicatorManipulatorProps = {
     indicators: Indicator[]
@@ -24,9 +14,9 @@ type IndicatorManipulatorProps = {
     onRemove: (id: string) => void
     newIndicator: NewIndicator
     setNewIndicator: (v: NewIndicator) => void
-  }
-  
-  export function IndicatorManipulator({
+}
+
+export function IndicatorManipulator({
     indicators,
     showModal,
     onOpen,
@@ -35,7 +25,7 @@ type IndicatorManipulatorProps = {
     onRemove,
     newIndicator,
     setNewIndicator,
-  }: IndicatorManipulatorProps) {
+}: IndicatorManipulatorProps) {
 
     const inputRef = useRef<HTMLInputElement | null>(null)
 
@@ -67,12 +57,12 @@ type IndicatorManipulatorProps = {
             <div
                 id='indicatorManipulatorContent'
                 className='w-full min-h-80 rounded-2xl border border-white/10 bg-gray-900/70
-                   backdrop-blur shadow-xl p-4 flex flex-col items-center'
+                    backdrop-blur shadow-xl p-4 flex flex-col items-center'
             >
                 <button
                     onClick={onOpen}
                     className='flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 text-white 
-                     hover:bg-blue-500 active:bg-blue-700 transition mb-4'
+                        hover:bg-blue-500 active:bg-blue-700 transition mb-4'
                 >
                     <Plus size={18} />
                     Add Indicator
@@ -86,7 +76,7 @@ type IndicatorManipulatorProps = {
                             <div
                                 key={i.id}
                                 className='flex justify-between items-center bg-gray-800/60 border border-white/10 
-                           rounded-lg px-4 py-2 hover:bg-gray-800/90 transition'
+                                    rounded-lg px-4 py-2 hover:bg-gray-800/90 transition'
                             >
                                 <div className='text-left'>
                                     <p className='text-white font-medium'>{i.indicatorName}</p>
