@@ -4,8 +4,6 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { Info } from "lucide-react"
 
 export default async function WatchList() {
-  const summary = 'project to track watched stocks and indicators'
-
   // 'AAPL', 'MSFT', 'GOOGL', 'AMZN', 'TSLA', 'NVDA', 'META', 'NFLX', 'AMD', 'INTC'
   const initTickerSymbols = ['AAPL', 'MSFT', 'GOOGL']
   const initTickerData = await getWatchListUpdates(initTickerSymbols)

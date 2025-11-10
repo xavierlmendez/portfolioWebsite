@@ -70,10 +70,10 @@ export async function getIndicator(_indicatorId: string) {
 
 export async function getMarketStatus() {
   const now = new Date();
-  let hour = now.getHours();
+  const hour = now.getHours();
   let isTradingHours = 8 <= hour && hour < 4;
 
-  let day = now.getDay();
+  const day = now.getDay();
   isTradingHours = isTradingHours && 1 <= day && day < 6;
   return {isOpen: isTradingHours}
 }
