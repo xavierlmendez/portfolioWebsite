@@ -80,7 +80,7 @@ export default function AboutPage() {
             <span className='text-emerald-400 font-semibold'>Intentional system design:</span> Each project balances simplicity, flexibility, and future scalability—architectural write-ups are shared as I iterate.
           </li>
           <li>
-            <span className='text-emerald-400 font-semibold'>Community focus:</span> I welcome questions, code reviews, and collaboration—connect via <a href='https://linkedin.com/in/xaviermendez' className='underline text-emerald-400'>LinkedIn</a>!
+            <span className='text-emerald-400 font-semibold'>Community focus:</span> I welcome questions, code reviews, and collaboration—connect via <a href='https://linkedin.com/in/xavierlmendez' className='underline text-emerald-400'>LinkedIn</a>!
           </li>
         </ul>
       </section>
