@@ -6,19 +6,75 @@ export async function getWatchListUpdates(tickers: Array<string>) {
   const results = await Promise.all(
     tickers.map(async (symbol) => {
       try {
-        const quote = await yahooFinance.quote(symbol)
+        const quote = await yahooFinance.quote(symbol);
+
+        // handle case where quote is null/undefined
+        if (!quote) {
+          return {
+            id: symbol,
+            title: symbol,
+            price: 'Price: N/A',
+            change: 'Change: N/A',
+            volume: 'Volume: N/A',
+            bid: 'Bid: N/A',
+            ask: 'Ask: N/A',
+            dayRange: 'Day Range: N/A',
+          };
+        }
+
+        const changePercent =
+          typeof quote.regularMarketChangePercent === 'number'
+            ? quote.regularMarketChangePercent.toFixed(2)
+            : 'N/A';
+
+        const volume =
+          typeof quote.regularMarketVolume === 'number'
+            ? quote.regularMarketVolume.toLocaleString()
+            : 'N/A';
+
+        const bidPrice =
+          typeof quote.bid === 'number' ? quote.bid : null;
+        const bidSize =
+          typeof quote.bidSize === 'number' ? quote.bidSize : null;
+
+        const askPrice =
+          typeof quote.ask === 'number' ? quote.ask : null;
+        const askSize =
+          typeof quote.askSize === 'number' ? quote.askSize : null;
+
+        const dayLow =
+          typeof quote.regularMarketDayLow === 'number'
+            ? quote.regularMarketDayLow
+            : null;
+        const dayHigh =
+          typeof quote.regularMarketDayHigh === 'number'
+            ? quote.regularMarketDayHigh
+            : null;
+
         return {
           id: symbol,
           title: symbol,
-          price: `Price: $${quote.regularMarketPrice}`,
-          change: `Change: ${quote.regularMarketChangePercent?.toFixed(2)}%`,
-          volume: `Volume: ${quote.regularMarketVolume?.toLocaleString()}`,
-          bid: `Bid: $${quote.bid} x ${quote.bidSize}`,
-          ask: `Ask: $${quote.ask} x ${quote.askSize}`,
-          dayRange: `Day Range: $${quote.regularMarketDayLow} - $${quote.regularMarketDayHigh}`
+          price:
+            bidPrice != null
+              ? `Price: $${quote.regularMarketPrice}`
+              : 'Price: N/A',
+          change: `Change: ${changePercent}%`,
+          volume: `Volume: ${volume}`,
+          bid:
+            bidPrice != null && bidSize != null
+              ? `Bid: $${bidPrice} x ${bidSize}`
+              : 'Bid: N/A',
+          ask:
+            askPrice != null && askSize != null
+              ? `Ask: $${askPrice} x ${askSize}`
+              : 'Ask: N/A',
+          dayRange:
+            dayLow != null && dayHigh != null
+              ? `Day Range: $${dayLow} - $${dayHigh}`
+              : 'Day Range: N/A',
         };
       } catch (err) {
-        console.log(err)
+        console.error(err);
         return {
           id: symbol,
           title: symbol,
@@ -27,13 +83,13 @@ export async function getWatchListUpdates(tickers: Array<string>) {
           volume: 'Volume: N/A',
           bid: 'Bid: N/A',
           ask: 'Ask: N/A',
-          dayRange: 'Day Range: N/A'
-        }
+          dayRange: 'Day Range: N/A',
+        };
       }
     })
-  )
+  );
 
-  return results
+  return results;
 }
 
 export async function getWatchListData(watchlistId: string) {

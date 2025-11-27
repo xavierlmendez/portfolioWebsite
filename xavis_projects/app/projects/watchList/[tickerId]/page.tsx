@@ -9,7 +9,7 @@ export default async function TickerDetailedView() {
       <ul>
         <div>botBrain individual bot view</div>
         {tickersWatched.map((ticker) => (
-          <TickerDetails key={ticker.id} update={ticker} />
+          <TickerDetails key={ticker.id} update={ticker} onDelete={() => {}}/>
         ))}
       </ul>
     )
