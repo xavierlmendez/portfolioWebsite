@@ -146,6 +146,12 @@ export const navLinksList = [
         status: 'Live',
       },
       {
+        title: 'AI Slop Game',
+        href: 'https://pawnevolution.com',
+        status: 'Live',
+        target: '_blank',
+      },
+      {
         title: 'Watch List Tracker',
         href: '/projects/watchList',
         status: 'Live',
@@ -191,6 +197,12 @@ export const projectsList = [
     title: 'Guinea Pig Projects',
     href: '/projects/guineaPigProjects',
     status: 'Live',
+  },
+  {
+    title: 'AI Slop Game',
+    href: 'https://pawnevolution.com',
+    status: 'Live',
+    target: '_blank',
   },
   {
     title: 'Watch List Tracker',

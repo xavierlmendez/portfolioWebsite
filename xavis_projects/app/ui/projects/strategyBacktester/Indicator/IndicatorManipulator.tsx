@@ -45,7 +45,7 @@ export function IndicatorManipulator({
                 document.body.style.overflow = prev
             }
         }
-    }, [showModal])
+    }, [showModal, onClose])
 
     return (
         <div className='w-full h-full text-center'>
