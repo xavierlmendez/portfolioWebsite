@@ -9,6 +9,13 @@ export default async function GuineaPigProjects() {
 
   const projectInformation = [
     {
+      title: 'Chart Builder',
+      description:
+        'A flexible experimental UI for plotting coordinate data, generating trendlines, and testing custom chart types. Designed as a guinea pig environment for future BotMaker and Strategy Backtester project visualizations and interactive data models.',
+      link: '/projects/guineaPigProjects/chartBuilder',
+      tags: ['Charts', 'Data Viz', 'Regression', 'Guinea Pig'],
+    },
+    {
       title: 'Kafka Traffic Visualizer',
       description:
         'An experimental frontend UI for monitoring Kafka topics, viewing live message streams, and exploring partition data in real-time.',
