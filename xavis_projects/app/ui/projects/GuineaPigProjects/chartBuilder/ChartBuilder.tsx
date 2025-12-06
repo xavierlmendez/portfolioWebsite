@@ -31,16 +31,16 @@ function computeLineOfBestFit(points: Point[]): { m: number; b: number } | null 
     if (points.length < 2) return null
 
     const n = points.length
-    const sumX = points.reduce((acc, p) => acc + p.x, 0)
-    const sumY = points.reduce((acc, p) => acc + p.y, 0)
+    const sumX = points.reduce((acc, p) => acc + (p.x ?? 0), 0)
+    const sumY = points.reduce((acc, p) => acc + (p.y ?? 0), 0)
     const meanX = sumX / n
     const meanY = sumY / n
 
     let numerator = 0
     let denominator = 0
     for (const { x, y } of points) {
-        const dx = x - meanX
-        const dy = y - meanY
+        const dx = x ?? 0 - meanX
+        const dy = y ?? 0 - meanY
         numerator += dx * dy
         denominator += dx * dx
     }
