@@ -59,7 +59,15 @@ export const WatchListControlPanel = memo(function WatchListControlPanel({
       </form>
 
       <div className="mt-3 text-sm text-white">
-        {tickers.length} tickers tracked
+        {tickers.length + ' tickers tracked '}
+        <button
+              type="button"
+              onClick={() => alert('Watch List Save functionality disabled pending user profile and login implementation.')}
+              className="text-blue-400 hover:underline"
+            >
+              Save List
+            </button>
+            {}
       </div>
 
       <ul className="mt-2 flex flex-wrap gap-2">
