@@ -29,10 +29,6 @@ export async function sendText(input: SendTextInput) {
         throw new Error('Both "from" and "to" phone numbers are required.');
     }
 
-    const optedInNumbers = {
-        myNumber : 6282344038
-    }
-
     const client = twilio(accountSid, authToken);
 
     const resolvedBody =

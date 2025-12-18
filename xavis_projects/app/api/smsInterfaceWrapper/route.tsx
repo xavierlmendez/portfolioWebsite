@@ -12,7 +12,7 @@ export async function POST(req: Request) {
       from,
       to,
       body,
-      symbols, // optional, e.g. "AAPL,MSFT"
+      symbols,
     } = jsonBody
 
     const symbolList: string[] =
@@ -37,13 +37,12 @@ export async function POST(req: Request) {
     })
 
     return NextResponse.json(result, { status: 200 })
-  } catch (err: any) {
+  } catch (err) {
     console.error('[smsInterfaceWrapper] Error sending SMS:', err)
-
     return NextResponse.json(
       {
         success: false,
-        error: err?.message ?? 'Unknown error',
+        error: 'Error Submitting Text Message',
       },
       { status: 400 }
     )
