@@ -26,6 +26,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
+      {/* todo add fire base auth here */}
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <div className='bg-[#0F172A] min-h-screen flex flex-col text-white'>
           <NavBar />
