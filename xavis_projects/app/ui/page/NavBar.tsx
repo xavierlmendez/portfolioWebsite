@@ -66,9 +66,9 @@ export default function Navbar() {
               </a>
             </li>
             <li>
-              <Link href='/about' 
-              className='block px-3 py-2 rounded-md hover:bg-black/10'
-              onClick={() => setOpen(false)}
+              <Link href='/about'
+                className='block px-3 py-2 rounded-md hover:bg-black/10'
+                onClick={() => setOpen(false)}
               >
                 About
               </Link>
@@ -107,9 +107,9 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-              <Link href='/support' 
-              className='block px-3 py-2 rounded-md hover:bg-black/10'
-              onClick={() => setOpen(false)}
+              <Link href='/support'
+                className='block px-3 py-2 rounded-md hover:bg-black/10'
+                onClick={() => setOpen(false)}
               >
                 Support This Project
               </Link>
@@ -117,6 +117,9 @@ export default function Navbar() {
           </ul>
         </div>
       )}
+      {/* TODO Create Mobile Sign Up View */}
+
+
     </header>
   );
 }
