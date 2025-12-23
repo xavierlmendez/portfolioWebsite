@@ -4,9 +4,11 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { NavLinkComponent } from './NavLinkComponent';
+import SignInForm from './userAuth/SignIn';
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
+  const [mobileView, setMobileView] = useState(false);
+  const [openSignIn, setOpenSignIn] = useState(false);
 
   return (
     <header className='w-full sticky top-0 z-50 pt-4'>
@@ -37,9 +39,9 @@ export default function Navbar() {
         <button
           className='md:hidden inline-flex h-10 w-10 items-center rounded-lg hover:bg-black/10 focus:outline-none focus:ring-2 focus:ring-black/30'
           aria-label='Toggle menu'
-          onClick={() => setOpen((v) => !v)}
+          onClick={() => setMobileView((v) => !v)}
         >
-          {open ? <X size={20} /> : <Menu size={20} />}
+          {mobileView ? <X size={20} /> : <Menu size={20} />}
         </button>
 
         {/* Desktop nav */}
@@ -48,11 +50,16 @@ export default function Navbar() {
           className='hidden text-l md:flex items-center gap-x-8 text-black mr-10'
         >
           {navLinksList.map((navLink) => (<NavLinkComponent key={navLink.href} values={navLink} />))}
+          <li
+            className='block px-4 py-2 text-l hover:text-blue-600 transition'
+            onClick={() => setOpenSignIn(true)}>
+            Sign In / Sign Up
+          </li>
         </ul>
       </nav>
 
       {/* Mobile menu panel */}
-      {open && (
+      {mobileView && (
         <div className='md:hidden border-t border-black/10 bg-[#f07a05] rounded-md'>
           <ul className='px-4 py-2 space-y-1 text-base text-black'>
             <li>
@@ -68,7 +75,7 @@ export default function Navbar() {
             <li>
               <Link href='/about'
                 className='block px-3 py-2 rounded-md hover:bg-black/10'
-                onClick={() => setOpen(false)}
+                onClick={() => setMobileView(false)}
               >
                 About
               </Link>
@@ -85,7 +92,7 @@ export default function Navbar() {
                     <Link
                       href={project.href}
                       className='block px-3 py-2 rounded-md hover:bg-black/10'
-                      onClick={() => setOpen(false)}
+                      onClick={() => setMobileView(false)}
                     >
                       {project.title}
                       {project.status !== 'Live' && (
@@ -101,7 +108,7 @@ export default function Navbar() {
               <Link
                 href='/resourcesAndBlog'
                 className='block px-3 py-2 rounded-md hover:bg-black/10'
-                onClick={() => setOpen(false)}
+                onClick={() => setMobileView(false)}
               >
                 Resources &apos;n Blog
               </Link>
@@ -109,7 +116,7 @@ export default function Navbar() {
             <li>
               <Link href='/support'
                 className='block px-3 py-2 rounded-md hover:bg-black/10'
-                onClick={() => setOpen(false)}
+                onClick={() => setMobileView(false)}
               >
                 Support This Project
               </Link>
@@ -118,7 +125,6 @@ export default function Navbar() {
         </div>
       )}
       {/* TODO Create Mobile Sign Up View */}
-
 
     </header>
   );
