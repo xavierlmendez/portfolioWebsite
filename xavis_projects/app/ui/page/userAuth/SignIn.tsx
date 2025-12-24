@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from "react";
 import { signin } from '@/app/actions/auth'
 import { useActionState } from 'react'

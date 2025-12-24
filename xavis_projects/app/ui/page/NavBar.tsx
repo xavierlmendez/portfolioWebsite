@@ -1,14 +1,17 @@
 'use client';
 
-import { useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { NavLinkComponent } from './NavLinkComponent';
 import SignInForm from './userAuth/SignIn';
 
-export default function Navbar() {
+interface NavBarProps {
+  setSignInFormOpen: Dispatch<SetStateAction<boolean>>;
+}
+
+export default function Navbar({ setSignInFormOpen }: NavBarProps) {
   const [mobileView, setMobileView] = useState(false);
-  const [openSignIn, setOpenSignIn] = useState(false);
 
   return (
     <header className='w-full sticky top-0 z-50 pt-4'>
@@ -50,10 +53,14 @@ export default function Navbar() {
           className='hidden text-l md:flex items-center gap-x-8 text-black mr-10'
         >
           {navLinksList.map((navLink) => (<NavLinkComponent key={navLink.href} values={navLink} />))}
-          <li
-            className='block px-4 py-2 text-l hover:text-blue-600 transition'
-            onClick={() => setOpenSignIn(true)}>
-            Sign In / Sign Up
+          <li> 
+            <button
+              type="button"
+              className="w-full text-left px-4 py-2 hover:text-blue-600 transition"
+              // onClick={() => setSignInFormOpen(true)}
+            >
+              Sign In
+            </button>
           </li>
         </ul>
       </nav>
