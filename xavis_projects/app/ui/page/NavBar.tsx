@@ -63,7 +63,7 @@ export default function Navbar({ signInStateAction, signedInState }: NavBarProps
           <li> 
             <button
               type="button"
-              className="w-full text-left px-4 py-2 hover:text-blue-600 transition"
+              className="hidden w-full text-left px-4 py-2 hover:text-blue-600 transition"
               onClick={() => invokeUserSignInAction()}
             >
               {signedInState == 'Signed In' ? 'Sign out' : 'Sign in'}
