@@ -1,5 +1,5 @@
 import { getUpdates } from '@/app/lib/updates'
-import { BlogEntry } from '@/app/ui/update'
+import { BlogEntry } from '@/app/ui/resourcesAndBlog/update'
 
 
 export default async function BotBrain() {

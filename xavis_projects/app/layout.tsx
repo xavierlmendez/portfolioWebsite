@@ -5,6 +5,9 @@ import './globals.css';
 import NavBar from './ui/page/NavBar';
 import { useFormOverlay } from './ui/page/userAuth/FormOverlayHooks';
 import SignInForm from './ui/page/userAuth/SignIn';
+import RootParentComponent from './ui/RootLayoutComponent';
+import RootComponent from './ui/RootLayoutComponent';
+import RootLayoutComponent from './ui/RootLayoutComponent';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -27,18 +30,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
 
-  const {
-    signInFormOpen, setSignInFormOpen, signUpFormOpen, setSignUpFormOpen
-  } = useFormOverlay();
-
   return (
     <html lang='en'>
-      {/* todo add fire base auth here */}
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <div className='bg-[#0F172A] min-h-screen flex flex-col text-white'>
-          <NavBar setSignInFormOpen={setSignInFormOpen} />
-          {/* todo move these into a root shell componenet in order to add form ovelay logic */}
-          {signInFormOpen && <SignInForm/>}
+          <RootLayoutComponent/>
           <main className='rounded-2xl shadow-2xl mx-auto max-w-7xl px-6 bg-black text-white w-full flex-grow mb-10 mt-10'>
             {children}
             <Analytics />

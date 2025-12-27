@@ -1,17 +1,24 @@
 'use client';
 
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { NavLinkComponent } from './NavLinkComponent';
 import SignInForm from './userAuth/SignIn';
 
 interface NavBarProps {
-  setSignInFormOpen: Dispatch<SetStateAction<boolean>>;
+  signInStateAction: (action:string) => void,
+  signedInState: string;
 }
 
-export default function Navbar({ setSignInFormOpen }: NavBarProps) {
+export default function Navbar({ signInStateAction, signedInState }: NavBarProps) {
   const [mobileView, setMobileView] = useState(false);
+
+  const invokeUserSignInAction = () => {
+    const signedInAction = signedInState === 'Signed In' ? 'Signing Out' : 'Signing In'
+    signInStateAction(signedInAction)
+  }
+
 
   return (
     <header className='w-full sticky top-0 z-50 pt-4'>
@@ -57,9 +64,9 @@ export default function Navbar({ setSignInFormOpen }: NavBarProps) {
             <button
               type="button"
               className="w-full text-left px-4 py-2 hover:text-blue-600 transition"
-              // onClick={() => setSignInFormOpen(true)}
+              onClick={() => invokeUserSignInAction()}
             >
-              Sign In
+              {signedInState == 'Signed In' ? 'Sign out' : 'Sign in'}
             </button>
           </li>
         </ul>
