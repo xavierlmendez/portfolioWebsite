@@ -2,11 +2,6 @@ import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
-import NavBar from './ui/page/NavBar';
-import { useFormOverlay } from './ui/page/userAuth/FormOverlayHooks';
-import SignInForm from './ui/page/userAuth/SignIn';
-import RootParentComponent from './ui/RootLayoutComponent';
-import RootComponent from './ui/RootLayoutComponent';
 import RootLayoutComponent from './ui/RootLayoutComponent';
 
 const geistSans = Geist({

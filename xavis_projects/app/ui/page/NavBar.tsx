@@ -1,10 +1,9 @@
 'use client';
 
-import { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { NavLinkComponent } from './NavLinkComponent';
-import SignInForm from './userAuth/SignIn';
 
 interface NavBarProps {
   signInStateAction: (action:string) => void,

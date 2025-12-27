@@ -4,6 +4,8 @@ import { SignupFormSchema, FormState } from "@/app/lib/definitions";
 import bcrypt from "bcryptjs";
 import { supabase } from "@/lib/supabase/client";
 export async function signup(state: FormState, formData: FormData) {
+  console.log(state) // logging for eslint error until I decide what to do with state
+
   // Validate form fields
   const validatedFields = SignupFormSchema.safeParse({
     email: formData.get("email"),
@@ -25,7 +27,7 @@ export async function signup(state: FormState, formData: FormData) {
   // 3. Insert the user into the database or call an Auth Library's API
   const { data, error } = await supabase.auth.signUp({
     email: email,
-    password: password,
+    password: hashedPassword,
     options: {
       emailRedirectTo: "https://example.com/welcome",
     },
@@ -44,7 +46,8 @@ export async function signup(state: FormState, formData: FormData) {
 }
 
 export async function signin(state: FormState, formData: FormData) {
-  console.log('sign in called');
+  console.log(state) // logging for eslint error until I decide what to do with state
+
   // Validate form fields
   console.log(formData)
   const validatedFields = SignupFormSchema.safeParse({
@@ -85,10 +88,4 @@ export async function signin(state: FormState, formData: FormData) {
   // TODO:
   // 4. Create user session
   // 5. Redirect user
-}
-
-
-export async function ping(_p: any, _fd: FormData) {
-  console.log('PING ACTION CALLED')
-  return {}
 }
