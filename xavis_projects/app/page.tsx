@@ -88,7 +88,18 @@ export default function LandingPage() {
       </section>
 
       <section id='projectsOverview' className='w-full max-w-4xl mb-8'>
-        <h2 className='text-2xl font-semibold mb-4 text-white'>Current Projects</h2>
+        <div className='text-2xl font-semibold mb-4 text-white grid grid-cols-5 gap-4'>
+          <h2 className="col-span-4">Current Projects</h2>
+          <a
+            href="/projects"
+            className="inline-flex items-center gap-1 rounded-full border border-emerald-500/30 bg-emerald-500/10
+               px-3 py-1 text-sm font-semibold text-emerald-300
+               transition hover:bg-emerald-500/20 hover:text-emerald-200
+               focus:outline-none focus:ring-2 focus:ring-emerald-400/50"
+          >
+            See all projects <span aria-hidden="true">→</span>
+          </a>
+        </div>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
           {currentProjects.map((proj) => (
             <a key={proj.name} href={proj.link}>

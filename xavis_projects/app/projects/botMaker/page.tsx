@@ -1,16 +1,15 @@
 import { getHomeRoute } from '@/app/lib/projectUtils/botMaker/botMakerConnect'
+import { Header } from '@/app/ui/page/header';
 
 export default async function BotBrain() {
   const [beStatus] = await Promise.all([getHomeRoute()]);
 
+  const pageTitle = '🧠 BotMaker 🧠'
+  const pageDescription = 'Visualization and experimentation interface for demonstrating a custom-built machine learning library.'
+
   return (
     <div className='w-full min-h-screen text-gray-200 p-8 md:p-12 space-y-10'>
-      <header className='border-b border-gray-700 pb-6'>
-        <h1 className='text-center text-4xl font-bold text-white mb-2'>🧠 BotMaker 🧠</h1>
-        <p className='text-center text-gray-400 text-md'>
-          Visualization and experimentation interface for demonstrating a custom-built machine learning library.
-        </p>
-      </header>
+      <Header title={pageTitle} description={pageDescription} />
 
       <section className='space-y-4'>
         <h2 className='text-2xl font-semibold text-amber-400'>Project State</h2>
