@@ -88,7 +88,7 @@ export default function SignInForm({ open, onClose, setSignedInState, signInStat
               Welcome!
             </h2>
             <p className="mt-1 text-sm text-black/80"> 
-              sign in or create an account for access to functionality that is rate limited, including modal trying and data importing
+              sign in or create an account for access to functionality that is rate limited, including modal training and data importing
             </p>
           </div>
 

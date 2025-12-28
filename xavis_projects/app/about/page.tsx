@@ -1,6 +1,7 @@
 'use client'
 
 import { Header } from "../ui/page/header";
+import Image from 'next/image'
 
 export default function AboutPage() {
 
@@ -64,11 +65,17 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id='archImagePlaceholder' className='w-full max-w-4xl mb-8 flex justify-center'>
-        <div className='w-full h-40 max-w-lg bg-gray-900 rounded-2xl flex items-center justify-center border-2 border-dashed border-emerald-500'>
-          <span className='text-gray-500 italic'>[Project architecture visual coming soon]</span>
-        </div>
-      </section>
+            <section id='sysArchDiagram' className='w-full max-w-3xl mb-8 flex justify-center'>
+            <div className="relative w-full aspect-[15/9] overflow-hidden bg-gray-900 rounded-2xl flex items-center justify-center border-2 border-dashed border-emerald-500">
+                <Image
+                  src="/portfolioArchitecture.png"
+                  alt="Arch Overview"
+                  width={740}
+                  height={430}
+                  className="max-w-full object-contain"
+                />
+              </div>
+            </section>
 
       <section id='philosophy' className='w-full max-w-4xl bg-gray-900 rounded-2xl shadow-md p-6 mb-8'>
         <h2 className='text-2xl font-semibold mb-4 text-white'>How I Approach Learning & Building</h2>

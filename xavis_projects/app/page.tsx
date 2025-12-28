@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 
 const currentProjects = [
   {
@@ -113,9 +114,15 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section id='sysArchDiagramPlaceholder' className='w-full max-w-4xl mb-8 flex justify-center'>
-        <div className='w-full h-40 max-w-lg bg-gray-900 rounded-2xl flex items-center justify-center border-2 border-dashed border-emerald-500'>
-          <span className='text-gray-500 italic'>[System architecture visual coming soon]</span>
+      <section id='sysArchDiagram' className='w-full max-w-3xl mb-8 flex justify-center'>
+      <div className="relative w-full aspect-[15/9] overflow-hidden bg-gray-900 rounded-2xl flex items-center justify-center border-2 border-dashed border-emerald-500">
+          <Image
+            src="/portfolioArchitecture.png"
+            alt="Arch Overview"
+            width={740}
+            height={430}
+            className="max-w-full object-contain"
+          />
         </div>
       </section>
 
