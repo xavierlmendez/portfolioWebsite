@@ -163,6 +163,11 @@ export const navLinksList = [
     target: 'host',
     dropdownList: [
       {
+        title: 'Projects Home',
+        href: '/projects',
+        status: 'Live',
+      },
+      {
         title: 'Guinea Pig Projects',
         href: '/projects/guineaPigProjects',
         status: 'Live',
@@ -188,16 +193,16 @@ export const navLinksList = [
         href: '/projects/botMaker',
         status: 'In Dev',
       },
-      {
-        title: 'Real-Time Alerts',
-        href: '/projects/alerts',
-        status: 'Back Logged',
-      },
-      {
-        title: 'Sentiment Analyzer',
-        href: '/projects/sentimentAnalyzer',
-        status: 'Back Logged',
-      },
+      // {
+      //   title: 'Real-Time Alerts',
+      //   href: '/projects/alerts',
+      //   status: 'Back Logged',
+      // },
+      // {
+      //   title: 'Sentiment Analyzer',
+      //   href: '/projects/sentimentAnalyzer',
+      //   status: 'Back Logged',
+      // },
     ],
   },
   {
@@ -215,6 +220,11 @@ export const navLinksList = [
 ];
 
 export const projectsList = [
+  {
+    title: 'Projects Home',
+    href: '/projects',
+    status: 'Live',
+  },
   {
     title: 'Guinea Pig Projects',
     href: '/projects/guineaPigProjects',
@@ -241,14 +251,14 @@ export const projectsList = [
     href: '/projects/botMaker',
     status: 'In Dev',
   },
-  {
-    title: 'Real-Time Alerts',
-    href: '/projects/alerts',
-    status: 'Back Logged',
-  },
-  {
-    title: 'Sentiment Analyzer',
-    href: '/projects/sentimentAnalyzer',
-    status: 'Back Logged',
-  },
+  // {
+  //   title: 'Real-Time Alerts',
+  //   href: '/projects/alerts',
+  //   status: 'Back Logged',
+  // },
+  // {
+  //   title: 'Sentiment Analyzer',
+  //   href: '/projects/sentimentAnalyzer',
+  //   status: 'Back Logged',
+  // },
 ];
