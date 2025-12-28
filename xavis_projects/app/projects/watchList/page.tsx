@@ -24,7 +24,7 @@ export default async function WatchList() {
   </TooltipProvider>)
 
   return (
-    <main className='w-full min-h-screen flex flex-col items-center sm:px-4 py-8'>
+    <main>
       <Header title={pageTitle} description={''} tooltip={tooltip} />
       <section>
         <WatchListClient initTickers={initTickerData} />

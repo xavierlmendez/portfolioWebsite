@@ -8,7 +8,7 @@ export default function LinksPage() {
   const pageTitle = 'Sentiment Analyzer';
 
   return (
-    <main className='w-full min-h-screen flex flex-col items-center px-4 py-8'>
+    <main className='w-full min-h-screen'>
       <Header title={pageTitle} description={''} />
       <UnderDevelopment message='' />
     </main>

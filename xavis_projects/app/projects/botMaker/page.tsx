@@ -8,8 +8,9 @@ export default async function BotBrain() {
   const pageDescription = 'Visualization and experimentation interface for demonstrating a custom-built machine learning library.'
 
   return (
-    <div className='w-full min-h-screen text-gray-200 p-8 md:p-12 space-y-10'>
+    <div >
       <Header title={pageTitle} description={pageDescription} />
+      <div className='w-full min-h-screen text-gray-200 p-8 md:p-12 space-y-10'>
 
       <section className='space-y-4'>
         <h2 className='text-2xl font-semibold text-amber-400'>Project State</h2>
@@ -77,6 +78,7 @@ export default async function BotBrain() {
           as the ML visualization components and backend API integrations are completed.
         </p>
       </footer>
+      </div>
     </div>
   )
 }

@@ -8,7 +8,7 @@ interface UnderDevelopmentProps {
 
 export function UnderDevelopment({ message }: UnderDevelopmentProps) {
     return (
-        <div className='w-full max-w-3xl flex flex-col items-center justify-center'>
+        <div className='w-full flex flex-col items-center justify-center'>
             <Image
                 src="/under_construction.svg"
                 alt="Under construction"
