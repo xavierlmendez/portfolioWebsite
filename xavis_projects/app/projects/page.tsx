@@ -16,6 +16,13 @@ export default async function Projects() {
       tags: ['Template', 'Prototype', 'Learning', 'Backend', 'Sandbox'],
     },
     {
+      title: 'Pawn Evolution',
+      description:
+        'A replit built game used to explore enforcing gen code AI to use coding standards and see how far it can be pushed through documentation, unit tests, and well architected prompts.',
+      link: 'https://pawnevolution.com/',
+      tags: ['Gen AI', 'No Code', 'Interactive', 'Frontend-Backend'],
+    },
+    {
       title: 'botMaker',
       description:
         'An interactive platform for building, training, and evaluating machine learning models directly through a web interface. Users can import data, auto-classify problem types, visualize model performance, and experiment with algorithms in real time. Designed as a dynamic frontend-to-backend integration demo within the portfolio.',
