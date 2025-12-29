@@ -2,6 +2,7 @@
 
 import React, { Dispatch, SetStateAction, useEffect } from 'react'
 import { X } from 'lucide-react'
+import { signout } from '@/app/actions/auth'
 
 type SignInFormProps = {
     open: boolean
@@ -33,7 +34,8 @@ export default function SignOutForm({ open, onClose, setSignedInState, signInSta
         return () => window.removeEventListener('keydown', handler)
     }, [open, onClose])
 
-    const signOut = () => {
+    const handleSignOut = () => {
+        signout()
         setSignedInState('Signed Out')
         signInStateAction('Signed Out')
     }
@@ -83,7 +85,7 @@ export default function SignOutForm({ open, onClose, setSignedInState, signInSta
                 </div>
                 <button
                     type="submit"
-                    onClick={() => signOut()}
+                    onClick={() => handleSignOut()}
                     className={[
                         'mt-1 inline-flex w-full items-center justify-center rounded-xl px-4 py-2.5 text-sm font-semibold',
                         // navbar-like hover behavior: black base -> hover to white text vibe

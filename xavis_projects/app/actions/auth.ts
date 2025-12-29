@@ -1,11 +1,13 @@
 'use server';
 
 import { SignupFormSchema, FormState } from "@/app/lib/definitions";
-import bcrypt from "bcryptjs";
-import { supabase } from "@/lib/supabase/client";
+import { createClient } from "@/lib/supabase/server";
+
 export async function signup(state: FormState, formData: FormData) {
   console.log(state) // logging for eslint error until I decide what to do with state
 
+
+  const supabase = await createClient()
   // Validate form fields
   const validatedFields = SignupFormSchema.safeParse({
     email: formData.get("email"),
@@ -21,17 +23,14 @@ export async function signup(state: FormState, formData: FormData) {
 
   // 2. Prepare data for insertion into database
   const { email, password } = validatedFields.data;
-  // e.g. Hash the user's password before storing it
-  const hashedPassword = await bcrypt.hash(password, 10);
 
   // 3. Insert the user into the database or call an Auth Library's API
   const { data, error } = await supabase.auth.signUp({
     email: email,
-    password: hashedPassword,
-    options: {
-      emailRedirectTo: "https://example.com/welcome",
-    },
-  });
+    password: password,
+  }); // supabase handles password hashing
+
+  console.log("returned supabase data" + data)
 
   if (!data) {
     return {
@@ -40,16 +39,14 @@ export async function signup(state: FormState, formData: FormData) {
     };
   }
 
-  // TODO:
-  // 4. Create user session
-  // 5. Redirect user
+  return { message: "Sign Up Successful" }
 }
 
 export async function signin(state: FormState, formData: FormData) {
   console.log(state) // logging for eslint error until I decide what to do with state
 
+  const supabase = await createClient()
   // Validate form fields
-  console.log(formData)
   const validatedFields = SignupFormSchema.safeParse({
     email: formData.get("email"),
     password: formData.get("password"),
@@ -64,17 +61,12 @@ export async function signin(state: FormState, formData: FormData) {
 
   // 2. Prepare data for insertion into database
   const { email, password } = validatedFields.data;
-  // e.g. Hash the user's password before storing it
-  const hashedPassword = await bcrypt.hash(password, 10);
-  console.log('called');
+
   // 3. Insert the user into the database or call an Auth Library's API
-  const { data, error } = await supabase.auth.signUp({
+  const { data, error } = await supabase.auth.signInWithPassword({
     email: email,
-    password: hashedPassword,
-    options: {
-      emailRedirectTo: "https://example.com/welcome",
-    },
-  });
+    password: password,
+  }); // note the cookie is set in the supabase/server.ts files function
 
   if (!data) {
     return {
@@ -83,9 +75,10 @@ export async function signin(state: FormState, formData: FormData) {
     };
   }
 
-  return {message: "Login Successful"}
+  return { message: "Login Successful" }
+}
 
-  // TODO:
-  // 4. Create user session
-  // 5. Redirect user
+export async function signout() {
+  const supabase = await createClient()
+  supabase.auth.signOut()
 }

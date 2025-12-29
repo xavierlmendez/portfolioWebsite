@@ -2,7 +2,8 @@ import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
-import RootLayoutComponent from './ui/RootLayoutComponent';
+import RootLayoutComponent from '../components/RootLayoutComponent';
+import { createClient } from '@/lib/supabase/server';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -19,26 +20,26 @@ export const metadata: Metadata = {
   description: 'Created and maintained by Xavier Mendez',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
 
+  const supabase = await createClient()
+  const { data: { user } } = await supabase.auth.getUser()
+  const signedIn = user != null
+
   return (
     <html lang='en'>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <div className='bg-[#0F172A] min-h-screen flex flex-col text-white'>
-          <RootLayoutComponent/>
-          <main className='rounded-2xl shadow-2xl mx-auto max-w-7xl px-6 bg-black text-white w-full flex-grow mb-10 mt-10'>
-            {children}
-            <Analytics />
-          </main>
-        </div>
-        <footer className='text-gray-500 text-center text-sm pt-8 mb-5'>
-          Connect with me on <a href='https://linkedin.com/in/xavierlmendez' className='underline text-emerald-400'>LinkedIn</a> — Feedback & collaboration welcome!
-        </footer>
+      <body className={'bg-[#0F172A] ' + `${geistSans.variable} ${geistMono.variable}`}>
+        
+          <RootLayoutComponent initialSignedIn={signedIn}>
+              {children}
+              <Analytics />
+          </RootLayoutComponent>
+
       </body>
-    </html>
+    </html >
   );
 }
