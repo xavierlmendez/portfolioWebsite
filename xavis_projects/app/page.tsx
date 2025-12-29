@@ -3,10 +3,10 @@ import Image from 'next/image'
 
 const currentProjects = [
   {
-    name: 'Kafka Visualizer',
-    description: 'Monitor and understand real-time message flows in distributed systems using Apache Kafka.',
-    status: 'In Progress',
-    link: '/projects/guineaPigProjects/kafkaFrontEnd',
+    name: 'Stock Watchlist',
+    description: 'A Frontend UI to pull stock information for the day from the Yahoo Finance API.',
+    status: 'Prototype - Continuous Development',
+    link: '/projects/watchList',
   },
   {
     name: 'Text Message Service Interface',
@@ -15,10 +15,10 @@ const currentProjects = [
     link: '/projects/guineaPigProjects/smsInterfaceWrapper',
   },
   {
-    name: 'Stock Watchlist',
-    description: 'A Frontend UI to pull stock information for the day from the Yahoo Finance API.',
+    name: 'Kafka Visualizer',
+    description: 'Monitor and understand real-time message flows in distributed systems using Apache Kafka.',
     status: 'In Progress',
-    link: '/projects/watchList',
+    link: '/projects/guineaPigProjects/kafkaFrontEnd',
   },
   {
     name: 'Real-Time Alerts',
