@@ -1,5 +1,8 @@
 // https://docs.confluent.io/kafka-clients/javascript/current/overview.html#javascript-client-promisified-api
-import {Kafka} from '@confluentinc/kafka-javascript'
+
+// couldnt find support for ts through confluent docs so this will have to be an exeption
+
+const Kafka = require('@confluentinc/kafka-javascript');
 
 export async function producePing() {
     const producer = new Kafka().producer({
@@ -45,9 +48,6 @@ export async function consumePing() {
     await consumer.disconnect();
 }
 
-const Kafka = require('@confluentinc/kafka-javascript');
-require("dotenv").config();
-
 function createProducer(config, onDeliveryReport) {
   const producer = new Kafka.Producer(config);
 
@@ -78,7 +78,7 @@ export async function produceExample() {
     'dr_msg_cb': true
   }
 
-  let topic = "purchases";
+  let topic = "test";
 
   let users = [ "eabara", "jsmith", "sgarcia", "jbernard", "htanaka", "awalther" ];
   let items = [ "book", "alarm clock", "t-shirts", "gift card", "batteries" ];
@@ -112,8 +112,6 @@ produceExample()
     process.exit(1);
   });
 
-  const Kafka = require('@confluentinc/kafka-javascript');
-require("dotenv").config();
 
 function createConsumer(config, onData) {
   const consumer = new Kafka.KafkaConsumer(config, {'auto.offset.reset': 'earliest'});
