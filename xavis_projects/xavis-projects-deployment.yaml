@@ -6,6 +6,12 @@ metadata:
     app: xavis-projects
 spec:
   replicas: 1   # see the ledger volume note below; raise only with a ReadWriteMany volume
+  # Recreate, not RollingUpdate: the ledger PVC is ReadWriteOnce, so a surge pod
+  # scheduled on another node stays Pending with a Multi-Attach error and the
+  # rollout never completes. Recreate stops the old pod first, at the cost of a
+  # few seconds of downtime on each deploy.
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: xavis-projects
@@ -14,6 +20,15 @@ spec:
       labels:
         app: xavis-projects
     spec:
+      # The image runs as uid 1001 (USER nextjs). A freshly provisioned EBS volume
+      # mounts root:root 0755, so without fsGroup every append to the ledger fails
+      # with EACCES and every signature returns 500. fsGroup makes the kubelet
+      # chgrp/chmod the volume to gid 1001 before the container starts.
+      securityContext:
+        runAsUser: 1001
+        runAsGroup: 1001
+        fsGroup: 1001
+        fsGroupChangePolicy: OnRootMismatch
       containers:
       - name: xavis-projects-container
         image: 705558108816.dkr.ecr.us-east-1.amazonaws.com/simple-docker-service-0afffee27add:latest

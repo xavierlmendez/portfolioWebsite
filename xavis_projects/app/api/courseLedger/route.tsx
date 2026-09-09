@@ -1,4 +1,11 @@
-import { appendEntry, validateEntry, type LedgerFields } from '@/app/lib/projectUtils/courseAiFramework/ledger'
+import {
+  appendEntry,
+  clientAddress,
+  parseFormFields,
+  parseJsonFields,
+  validateEntry,
+  type LedgerFields,
+} from '@/app/lib/projectUtils/courseAiFramework/ledger'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
@@ -8,33 +15,33 @@ function text(body: string, status = 200) {
 }
 
 // GET /api/courseLedger — the ledger is write-only; never serve the file.
+// The reference server answers GET /ledger with the sign-in form; here the form
+// is a page in the app, so this points at it.
 export async function GET() {
   return text('The ledger is write-only. Sign it at /projects/courseAiFramework/ledger', 405)
 }
 
 // POST /api/courseLedger — form-encoded or JSON: student_id, nonce, run_tag?, variant?
 export async function POST(req: Request) {
-  let fields: LedgerFields = {}
+  let fields: LedgerFields
   const ctype = req.headers.get('content-type') ?? ''
   try {
     if (ctype.includes('json')) {
-      const body = await req.json()
-      if (!body || typeof body !== 'object') return text('bad json', 400)
-      fields = Object.fromEntries(Object.entries(body).map(([k, v]) => [k, String(v)]))
+      const parsed = parseJsonFields(await req.json())
+      if (!parsed) return text('bad json', 400)
+      fields = parsed
     } else {
-      const raw = await req.text()
-      fields = Object.fromEntries(new URLSearchParams(raw).entries())
+      fields = parseFormFields(await req.text())
     }
   } catch {
-    return text(ctype.includes('json') ? 'bad json' : 'bad form body', 400)
+    return text('bad json', 400)
   }
 
   const v = validateEntry(fields)
   if (!v.ok) return text(v.reason, 400)
 
-  const client = req.headers.get('x-forwarded-for')?.split(',')[0].trim() || 'unknown'
   try {
-    await appendEntry(v.ids, v.tag ?? 'practice', v.variant ?? '', client)
+    await appendEntry(v.ids, v.tag, v.variant, clientAddress(req.headers))
   } catch (err) {
     console.error('courseLedger append failed:', err)
     return text('ledger unavailable; tell course staff', 500)
