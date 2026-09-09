@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# course ledger (student IDs and client addresses; never committed)
+course-ledger.tsv
+ledger.tsv
