@@ -56,7 +56,14 @@ export default async function Projects() {
         'A toolkit for webscraping financial news and social media sources, performing sentiment analysis, and surfacing actionable insights. Enables correlation of market sentiment with price movements, supporting more informed investment decisions.',
       link: '/projects/sentimentAnalyzer',
       tags: ['NLP', 'Sentiment Analysis', 'Webscraping', 'Finance', 'Data Science'],
-    }
+    },
+    {
+      title: 'Course AI Project Framework',
+      description:
+        'A framework for course projects where students direct an internet-connected AI harness, graded reproducibly by TAs with no paid subscriptions. Hosts the four worked examples\u2019 published resources and the write-only course ledger.',
+      link: '/projects/courseAiFramework',
+      tags: ['Education', 'AI Harnesses', 'Grading', 'Framework'],
+    },
   ];
   return (
     <>

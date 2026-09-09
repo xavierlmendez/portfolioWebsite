@@ -5,7 +5,7 @@ metadata:
   labels:
     app: xavis-projects
 spec:
-  replicas: 2
+  replicas: 1   # see the ledger volume note below; raise only with a ReadWriteMany volume
   selector:
     matchLabels:
       app: xavis-projects
@@ -19,6 +19,17 @@ spec:
         image: 705558108816.dkr.ecr.us-east-1.amazonaws.com/simple-docker-service-0afffee27add:latest
         ports:
         - containerPort: 3000
+        env:
+        - name: COURSE_LEDGER_NONCE
+          valueFrom:
+            secretKeyRef:
+              name: course-ledger
+              key: nonce
+        - name: COURSE_LEDGER_PATH
+          value: /ledger/course-ledger.tsv
+        volumeMounts:
+        - name: course-ledger
+          mountPath: /ledger
         resources:
           requests:
             cpu: "250m"
@@ -29,6 +40,25 @@ spec:
         imagePullPolicy: Always
       imagePullSecrets:
       - name: ecr-secret
+      volumes:
+      - name: course-ledger
+        persistentVolumeClaim:
+          claimName: course-ledger-pvc
+---
+# The ledger is an append-only file. With replicas: 2 and no shared volume, each pod
+# would keep its own file and entries would split between them. Either run replicas: 1
+# with this ReadWriteOnce claim, or use a ReadWriteMany storage class (e.g. EFS) for
+# two replicas. Create the nonce secret first:
+#   kubectl create secret generic course-ledger --from-literal=nonce=<NONCE>
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: course-ledger-pvc
+spec:
+  accessModes: ["ReadWriteOnce"]
+  resources:
+    requests:
+      storage: 1Gi
 ---
 apiVersion: v1
 kind: Service
