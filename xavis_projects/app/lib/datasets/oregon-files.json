@@ -1,0 +1,6 @@
+{
+  "generated": "placeholder; regenerated from manifest.csv when the set is curated",
+  "images": [],
+  "extras": ["manifest.csv", "SHA256SUMS.txt", "README.md"],
+  "archives": ["oregon_png_1024.zip", "oregon_png_full.zip", "oregon_heic.zip"]
+}

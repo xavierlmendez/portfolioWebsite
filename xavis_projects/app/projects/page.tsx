@@ -64,6 +64,13 @@ export default async function Projects() {
       link: '/projects/courseAiFramework',
       tags: ['Education', 'AI Harnesses', 'Grading', 'Framework'],
     },
+    {
+      title: 'Clustering Test Images',
+      description:
+        'A small set of high-resolution landscape photographs (Oregon hiking trip, iPhone HEIC originals) published as a clean test set for graph-clustering and image-segmentation experiments. Includes lossless PNG exports at full and reduced sizes, a manifest with per-image statistics, and checksums.',
+      link: '/projects/clusteringTestImages',
+      tags: ['Research', 'Dataset', 'Clustering', 'Image Segmentation', 'Download'],
+    },
   ];
   return (
     <>
