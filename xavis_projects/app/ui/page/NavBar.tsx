@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { NavLinkComponent } from './NavLinkComponent';
+import { projectsList } from '@/app/lib/projects';
 
 interface NavBarProps {
   signInStateAction: (action:string) => void,
@@ -161,49 +162,7 @@ export const navLinksList = [
     href: '/projects',
     isDropdown: true,
     target: 'host',
-    dropdownList: [
-      {
-        title: 'Projects Home',
-        href: '/projects',
-        status: 'Live',
-      },
-      {
-        title: 'Guinea Pig Projects',
-        href: '/projects/guineaPigProjects',
-        status: 'Live',
-      },
-      {
-        title: 'AI Slop Game',
-        href: 'https://pawnevolution.com',
-        status: 'Live',
-        target: '_blank',
-      },
-      {
-        title: 'Watch List Tracker',
-        href: '/projects/watchList',
-        status: 'Live',
-      },
-      {
-        title: 'Strategy Backtester',
-        href: '/projects/strategyBacktester',
-        status: 'In Dev',
-      },
-      {
-        title: 'BotMaker',
-        href: '/projects/botMaker',
-        status: 'In Dev',
-      },
-      // {
-      //   title: 'Real-Time Alerts',
-      //   href: '/projects/alerts',
-      //   status: 'Back Logged',
-      // },
-      // {
-      //   title: 'Sentiment Analyzer',
-      //   href: '/projects/sentimentAnalyzer',
-      //   status: 'Back Logged',
-      // },
-    ],
+    dropdownList: projectsList,
   },
   {
     title: "Resources 'n Blog",
@@ -217,48 +176,4 @@ export const navLinksList = [
     isDropdown: false,
     target: 'host',
   },
-];
-
-export const projectsList = [
-  {
-    title: 'Projects Home',
-    href: '/projects',
-    status: 'Live',
-  },
-  {
-    title: 'Guinea Pig Projects',
-    href: '/projects/guineaPigProjects',
-    status: 'Live',
-  },
-  {
-    title: 'AI Slop Game',
-    href: 'https://pawnevolution.com',
-    status: 'Live',
-    target: '_blank',
-  },
-  {
-    title: 'Watch List Tracker',
-    href: '/projects/watchList',
-    status: 'Live',
-  },
-  {
-    title: 'Strategy Backtester',
-    href: '/projects/strategyBacktester',
-    status: 'In Dev',
-  },
-  {
-    title: 'BotMaker',
-    href: '/projects/botMaker',
-    status: 'In Dev',
-  },
-  // {
-  //   title: 'Real-Time Alerts',
-  //   href: '/projects/alerts',
-  //   status: 'Back Logged',
-  // },
-  // {
-  //   title: 'Sentiment Analyzer',
-  //   href: '/projects/sentimentAnalyzer',
-  //   status: 'Back Logged',
-  // },
 ];

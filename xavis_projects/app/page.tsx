@@ -1,44 +1,7 @@
 'use client'
 import Image from 'next/image'
+import { showcaseProjects } from '@/app/lib/projects'
 
-const currentProjects = [
-  {
-    name: 'Stock Watchlist',
-    description: 'A Frontend UI to pull stock information for the day from the Yahoo Finance API.',
-    status: 'Prototype V1',
-    link: '/projects/watchList',
-  },
-  {
-    name: 'Text Message Service Interface',
-    description: 'A frontend UI for testing and visualizing backend messaging API integrations.',
-    status: 'Complete',
-    link: '/projects/guineaPigProjects/smsInterfaceWrapper',
-  },
-  {
-    name: 'Kafka Visualizer',
-    description: 'Monitor and understand real-time message flows in distributed systems using Apache Kafka.',
-    status: 'Under Development',
-    link: '/projects/guineaPigProjects/kafkaFrontEnd',
-  },
-  {
-    name: 'Bot Maker',
-    description: 'An experimentation ground for algorithmic trading / general ML bots and analytics tools.',
-    status: 'Under Development',
-    link: '/projects/botMaker',
-  },
-  {
-    name: 'Real-Time Alerts',
-    description: 'A project that will incorporate the Text Message Service and Stock Watchlist to provide real time alerts based off indicators.',
-    status: 'Exploring',
-    link: '/projects/alerts',
-  },
-  {
-    name: 'Strategy Backtester',
-    description: 'This will serve as a pre-cursor to Bot Maker to start building the infrastructure to store analytical data and display it via the displaying and analysis of indicators created in Stategy Backtester',
-    status: 'Exploring',
-    link: '/projects/strategyBacktester',
-  },
-]
 
 // Portfolio Feature Ideas
 const featureIdeas = [
@@ -102,8 +65,8 @@ export default function LandingPage() {
           </a>
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-          {currentProjects.map((proj) => (
-            <a key={proj.name} href={proj.link}>
+          {showcaseProjects.map((proj) => (
+            <a key={proj.id} href={proj.href}>
               <div className='bg-gray-800 rounded-xl p-4 flex flex-col shadow hover:scale-[1.025] transition-transform'>
                 <h3 className='text-lg font-semibold text-emerald-300'>{proj.name}</h3>
                 <p className='text-gray-300 text-sm mb-1'>{proj.description}</p>
