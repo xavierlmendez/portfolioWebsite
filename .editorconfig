@@ -1,0 +1,20 @@
+# adapted from engineering-standards @ 1b9616e
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4
+
+[*.{yml,yaml,json,toml,md}]
+indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = false
+
+# TS/JS/CSS code is mixed 2/4-space until a formatter lands (BL-09): don't force a size.
+[*.{ts,tsx,js,mjs,css}]
+indent_size = unset

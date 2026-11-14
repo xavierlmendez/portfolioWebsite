@@ -137,7 +137,7 @@ export default function Navbar({ signInStateAction, signedInState }: NavBarProps
           </ul>
         </div>
       )}
-      {/* TODO Create Mobile Sign Up View */}
+      {/* TODO(BL-01): Create Mobile Sign Up View */}
 
     </header>
   );

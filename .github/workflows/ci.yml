@@ -1,0 +1,56 @@
+# from engineering-standards @ 1b9616e (configs/python/ci.yml, mapped to npm)
+# .github/workflows/ci.yml — source: actions/setup-node docs, GitHub Actions workflow syntax.
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: xavis_projects
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22" # README set-up script installs Node 22
+          cache: npm
+          cache-dependency-path: xavis_projects/package-lock.json
+      - name: Install
+        run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Typecheck
+        run: npm run typecheck
+      - name: TODOs reference the backlog
+        run: |
+          for d in app components lib; do
+            [ -d "$d" ] || { echo "TODO check: directory xavis_projects/$d is missing"; exit 1; }
+          done
+          set +e
+          hits=$(grep -rnIiEw --include='*.ts' --include='*.tsx' --include='*.js' --include='*.mjs' \
+            --exclude-dir=node_modules --exclude-dir=.next 'todo|fixme' app components lib)
+          rc=$?
+          set -e
+          # grep: 0 = matches, 1 = no matches, 2+ = error.
+          if [ "$rc" -gt 1 ]; then echo "TODO check: grep failed (exit $rc)"; exit "$rc"; fi
+          hits=$(printf '%s\n' "$hits" | grep -vE '(TODO|FIXME)\(BL-[0-9]+\)' || true)
+          if [ -n "$hits" ]; then echo "$hits"; echo "TODO/FIXME without a BL-nn id"; exit 1; fi
+      - name: Test
+        run: npm run test
+      - name: Build
+        # BOT_MAKER_API_URL is unset in CI; /projects/botMaker logs "Failed to parse URL from undefined/" during build and continues.
+        run: npm run build
