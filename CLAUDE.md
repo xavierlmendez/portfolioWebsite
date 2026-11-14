@@ -23,6 +23,8 @@ goes into any file.
 - Every feature or fix ships with a deterministic test (`.claude/agents/testing-agent.md`).
 - Do not modify the course-framework code unless asked: `app/projects/courseAiFramework/**`,
   `app/api/courseLedger/**`, `app/api/courseResource/**`, `app/lib/projectUtils/courseAiFramework/**`.
+- The project list (name, status, link, description, tags) lives only in
+  `xavis_projects/app/lib/projects.ts` (D-001). Pages and the nav derive from it.
 
 ## Commands (run in `xavis_projects/`)
 

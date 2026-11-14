@@ -2,6 +2,7 @@
 
 import { Header } from "../ui/page/header";
 import Image from 'next/image'
+import { showcaseProjects } from '@/app/lib/projects'
 
 export default function AboutPage() {
 
@@ -19,29 +20,6 @@ export default function AboutPage() {
     '• Provide a frontend UI for backend-focused projects, including a text message service interface and financial analytics apps.\n' +
     '• Gradually evolve this platform into a polished proof-of-work, and an open resource for fellow engineers.';
 
-  const currentProjects = [
-    {
-      name: 'Kafka Visualizer',
-      description: 'Visualizes real-time Kafka traffic for learning and debugging event-driven architectures.',
-      status: 'In Progress',
-    },
-    {
-      name: 'Text Message Service Interface',
-      description: 'Frontend for a backend messaging API wrapper to experiment with async communication.',
-      status: 'Prototype',
-    },
-    {
-      name: 'Culinary Connection',
-      description: 'Connects culinary students with local customers—explores scalable backend and data modeling.',
-      status: 'Alpha',
-    },
-    {
-      name: 'Bot Maker',
-      description: 'A sandbox for building trading bots and analyzing financial signals.',
-      status: 'Exploring',
-    },
-  ]
-
   return (
     <main className='w-full min-h-screen flex flex-col items-center px-4 py-8'>
 
@@ -55,12 +33,14 @@ export default function AboutPage() {
       <section id='currentProjects' className='w-full max-w-4xl mb-8'>
         <h2 className='text-2xl font-semibold text-white mr-2 p-4'>Active Experiments</h2>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-          {currentProjects.map((proj) => (
-            <div key={proj.name} className='bg-gray-800 rounded-xl p-4 flex flex-col shadow hover:scale-[1.025] transition-transform'>
-              <h3 className='text-lg font-semibold text-emerald-300'>{proj.name}</h3>
-              <p className='text-gray-300 text-sm mb-1'>{proj.description}</p>
-              <span className='text-xs bg-gray-700 text-emerald-400 rounded-full px-2 py-1 self-start'>{proj.status}</span>
-            </div>
+          {showcaseProjects.map((proj) => (
+            <a key={proj.id} href={proj.href}>
+              <div className='bg-gray-800 rounded-xl p-4 flex flex-col shadow hover:scale-[1.025] transition-transform'>
+                <h3 className='text-lg font-semibold text-emerald-300'>{proj.name}</h3>
+                <p className='text-gray-300 text-sm mb-1'>{proj.description}</p>
+                <span className='text-xs bg-gray-700 text-emerald-400 rounded-full px-2 py-1 self-start'>{proj.status}</span>
+              </div>
+            </a>
           ))}
         </div>
       </section>
