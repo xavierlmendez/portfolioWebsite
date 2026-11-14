@@ -28,6 +28,19 @@ API route that accepts the points and returns `{ m, b }`, and the component swit
 is not always the bare symbol. Side effect: adding `A` is rejected while `AAPL` is listed. Needs the stored id
 made the bare symbol so the check can be an exact match, plus a test.
 
+### BL-04 — Short blurbs for Home and About project cards · `backlog-only` · re-entry small
+The Home and About status cards render `showcaseProjects` with the long Projects-page `description`.
+Needs an optional short-blurb field on `Project` in `xavis_projects/app/lib/projects.ts`, filled per
+project, and the two pages switched to it.
+
+### BL-05 — Chart Builder has no status · `backlog-only` · re-entry small
+The `chartBuilder` entry in `xavis_projects/app/lib/projects.ts` has no `status`, so it is left off the
+Home/About showcase. Needs a status chosen from Live / In Development / Exploring / Planned.
+
+### BL-06 — Rewrite the Sentiment Analyzer description · `backlog-only` · re-entry small
+The `sentimentAnalyzer` description and tags in `xavis_projects/app/lib/projects.ts` no longer match
+the project's planned direction. Needs them rewritten.
+
 ### BL-07 — Placeholder pages · `kept` · re-entry medium
 `/projects/alerts`, `/projects/sentimentAnalyzer` and `/resourcesAndBlog` render a header and an
 "under development" notice only. The first two are linked from the project list. Each needs real content
