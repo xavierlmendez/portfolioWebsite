@@ -1,0 +1,8 @@
+# adapted from engineering-standards @ 1b9616e
+# Repo-wide, language-neutral entries. App-specific ignores live in xavis_projects/.gitignore.
+CLAUDE.local.md
+.claude/settings.local.json
+.idea/
+.vscode/
+.DS_Store
+*.swp

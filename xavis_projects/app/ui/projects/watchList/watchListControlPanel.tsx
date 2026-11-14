@@ -31,7 +31,7 @@ export const WatchListControlPanel = memo(function WatchListControlPanel({
     const cleaned = symbol.trim().toUpperCase();
     if (!cleaned) { return; }
 
-    const symbolAlreadyInTickers = tickers.some(ticker => ticker.id.includes(cleaned)); // todo fix storage escaping ticker
+    const symbolAlreadyInTickers = tickers.some(ticker => ticker.id.includes(cleaned)); // TODO(BL-03): fix storage escaping ticker
     if (symbolAlreadyInTickers) {
       alert('Ticker is already in Watch List.');
       return;

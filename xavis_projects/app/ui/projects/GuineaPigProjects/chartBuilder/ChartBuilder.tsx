@@ -26,7 +26,7 @@ const defaultPointsText = `1,2
 4,5
 5,4.5`
 
-// todo move this to BE
+// TODO(BL-02): move this to the backend
 function computeLineOfBestFit(points: Point[]): { m: number; b: number } | null {
     if (points.length < 2) return null
 
