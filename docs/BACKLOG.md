@@ -65,8 +65,14 @@ slow or unreachable upstream.
 
 ### BL-13 — Blog and Support pages hidden from the menu · `kept` · re-entry small
 `/resourcesAndBlog` (a placeholder, see BL-07) and `/support` are no longer linked from the desktop or
-mobile menu. The pages still exist and load by direct URL. Each needs a decision: restore the link once
-the page has real content, or delete the page. The Home page's navigation guide still mentions a
-"Blog / Changelog".
+mobile menu. The pages still exist and load by direct URL. The blog link returns when BL-14 ships. The
+Support page still needs a decision: restore the link once its content is right, or delete the page.
+The Home page's navigation guide still mentions a "Blog / Changelog".
+
+### BL-14 — Build out the blog · `backlog-only` · re-entry medium
+Owner decision (2026-11-15): the blog will be built, as a dated record of how the owner's work and
+working methods change over time, to be read later as a time capsule. Needs a post format and where
+posts live, a list page and a post page at `/resourcesAndBlog` (or a new route), a first entry, and the
+menu link restored (BL-13).
 
 ## Closed
