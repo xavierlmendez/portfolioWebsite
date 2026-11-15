@@ -63,4 +63,10 @@ The `/projects/watchList`, `/projects/stock` and `/projects/botMaker` pages call
 `export const dynamic = 'force-dynamic'` and timeouts on their fetches, so CI can't hang or flake on a
 slow or unreachable upstream.
 
+### BL-13 — Blog and Support pages hidden from the menu · `kept` · re-entry small
+`/resourcesAndBlog` (a placeholder, see BL-07) and `/support` are no longer linked from the desktop or
+mobile menu. The pages still exist and load by direct URL. Each needs a decision: restore the link once
+the page has real content, or delete the page. The Home page's navigation guide still mentions a
+"Blog / Changelog".
+
 ## Closed
