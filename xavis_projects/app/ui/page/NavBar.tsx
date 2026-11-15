@@ -117,24 +117,6 @@ export default function Navbar({ signInStateAction, signedInState }: NavBarProps
                 ))}
               </ul>
             </li>
-
-            <li>
-              <Link
-                href='/resourcesAndBlog'
-                className='block px-3 py-2 rounded-md hover:bg-black/10'
-                onClick={() => setMobileView(false)}
-              >
-                Resources &apos;n Blog
-              </Link>
-            </li>
-            <li>
-              <Link href='/support'
-                className='block px-3 py-2 rounded-md hover:bg-black/10'
-                onClick={() => setMobileView(false)}
-              >
-                Support This Project
-              </Link>
-            </li>
           </ul>
         </div>
       )}
@@ -163,17 +145,5 @@ export const navLinksList = [
     isDropdown: true,
     target: 'host',
     dropdownList: projectsList,
-  },
-  {
-    title: "Resources 'n Blog",
-    href: '/resourcesAndBlog',
-    isDropdown: false,
-    target: 'host',
-  },
-  {
-    title: 'Support This Project',
-    href: '/support',
-    isDropdown: false,
-    target: 'host',
   },
 ];
