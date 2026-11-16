@@ -63,6 +63,16 @@ The `/projects/watchList`, `/projects/stock` and `/projects/botMaker` pages call
 `export const dynamic = 'force-dynamic'` and timeouts on their fetches, so CI can't hang or flake on a
 slow or unreachable upstream.
 
+### BL-11 — lorecheck page: real sample and repo link after release · `backlog-only` · re-entry small
+`xavis_projects/app/projects/lorecheck/page.tsx` shows three static sample findings from an offline
+run on a test story. Once the tool has a public release, replace them with a generated ledger or
+screenshots, and link the repository when it is public.
+
+### BL-12 — Disaster Paws page: screenshots and walkthrough · `backlog-only` · re-entry small
+`xavis_projects/app/projects/disasterPaws/page.tsx` describes the prototype in text only, with three
+static sample scores from an offline run of its scoring rules. Add screenshots and a walkthrough once
+the dashboard exists; link the repositories if they are made public.
+
 ### BL-13 — Blog and Support pages hidden from the menu · `kept` · re-entry small
 `/resourcesAndBlog` (a placeholder, see BL-07) and `/support` are no longer linked from the desktop or
 mobile menu. The pages still exist and load by direct URL. The blog link returns when BL-14 ships. The
