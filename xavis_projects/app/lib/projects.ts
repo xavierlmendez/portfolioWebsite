@@ -22,6 +22,15 @@ export const projects: Project[] = [
     tags: ['Template', 'Prototype', 'Learning', 'Backend', 'Sandbox'],
   },
   {
+    id: 'lorecheck',
+    name: 'lorecheck',
+    status: 'In Development',
+    href: '/projects/lorecheck',
+    description:
+      'A local consistency checker for authors, editors and game masters. It turns a manuscript and its world material into facts tied to exact quotes, finds contradictions with explicit logic rules, and suggests fixes without ever editing the text.',
+    tags: ['Writing Tools', 'Consistency Checking', 'Logic Rules', 'Local-first', 'LLM'],
+  },
+  {
     id: 'watchList',
     name: 'Stock Watchlist',
     status: 'In Development',
@@ -47,6 +56,15 @@ export const projects: Project[] = [
     description:
       'An interactive platform for building, training, and evaluating machine learning models directly through a web interface. Users can import data, auto-classify problem types, visualize model performance, and experiment with algorithms in real time. Designed as a dynamic frontend-to-backend integration demo within the portfolio.',
     tags: ['Machine Learning', 'Data Visualization', 'Interactive', 'Frontend-Backend', 'AI Tools'],
+  },
+  {
+    id: 'disasterPaws',
+    name: 'Disaster Paws',
+    status: 'Exploring',
+    href: '/projects/disasterPaws',
+    description:
+      'An early prototype for animal rescue reports after natural disasters. A rule-based scorer suggests a priority, and a person must approve each incident before it can be acted on, with every step recorded in an audit trail.',
+    tags: ['Disaster Response', 'Animal Rescue', 'Human-in-the-loop', 'Triage', 'Backend'],
   },
   {
     id: 'alerts',
